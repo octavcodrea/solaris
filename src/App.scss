@@ -1,0 +1,252 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+// ===============================================================================================
+
+body{
+    background-color: rgb(31, 29, 30);
+    overflow: hidden;
+}
+
+.imageContainer{
+    margin: auto;
+    position: relative;
+    border: 2px dashed rgb(123, 123, 255);
+    height: 900px;
+    width: 800px;
+}
+
+.image{
+    // left: 35%;
+    position: absolute;
+    display: inline-block;
+    // border: 1px solid red;
+    width: 700px;
+    height: 700px;
+
+    svg{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.color1{
+    svg{
+        // fill: rgb(248, 214, 101);
+        // background-color: linear-gradient(31deg, rgba(125,243,255,1) 0%, rgba(185,134,255,1) 100%);
+    }
+}
+
+.headContainer{
+    position: absolute;
+    left: 150px;
+
+    // #head-back-color, #head-back-lineart{
+    // }
+    
+    #head-front-color, #head-front-lineart{
+        z-index: 10;
+    }
+}
+
+.brain{
+    position: absolute;
+    left: 250px;
+    top: 200px;
+    z-index: 5;
+    // #brain-color, #brain-lineart{
+    // }
+}
+
+.brain-wires{
+    position: absolute;
+    left: 150px;
+    top: 180px;
+    z-index: 3;
+}
+
+.faceContainer{
+    position: absolute;
+    left: 150px;
+    top: 350px;
+
+    #face-front-color, #face-front-lineart{
+        z-index: 10;
+    }
+
+    #face-back-color, #face-back-lineart{
+        top: -50px;
+        z-index: 0;
+    }
+
+    #nose-color, #nose-lineart{
+        z-index: 15;
+        left: 193px;
+        top: 20px;
+    }
+
+    #eye-left-color, #eye-left-lineart{
+        z-index: 15;
+        left: 50px;
+        top: -10px;
+    }
+
+    #eye-right-color, #eye-right-lineart{
+        z-index: 15;
+        left: 323px;
+        top: -10px;
+    }
+}
+
+.mouthContainer{
+    position: absolute;
+    top: 620px;
+    left: 285px;
+    z-index: 10;
+
+    #mouth-back-color, #mouth-back-lineart{
+        top: -65px;
+
+    }
+}
+
+.wires-mouth{
+    position: absolute;
+    top: 500px;
+    left: 200px;
+}
+
+.cheek-left{
+    position: absolute;
+    left: 170px;
+    top: 500px;
+    z-index: 5;
+    // #cheek-left-color, #cheek-left-lineart{
+    //     left: 50px;
+    // }
+}
+
+.cheek-right{
+    position: absolute;
+    left: 505px;
+    top: 500px;
+    z-index: 5;
+    // #cheek-left-color, #cheek-left-lineart{
+    //     left: 50px;
+    // }
+}
+
+.ear-left{
+    position: absolute;
+    left: 90px;
+    top: 370px;
+}
+
+.ear-right{
+    position: absolute;
+    left: 600px;
+    top: 370px;
+}
+
+.neck-front{
+    position: absolute;
+    top: 680px;
+    left: 330px;
+    z-index: 5;
+}
+
+.neck-front-left{
+    position: absolute;
+    top: 680px;
+    left: 230px;
+    z-index: 5;
+}
+
+.neck-front-right{
+    position: absolute;
+    top: 680px;
+    left: 480px;
+    z-index: 5;
+}
+
+.neck-back{
+    position: absolute;
+    top: 680px;
+    left: 320px;
+}
+
+.neck-back-left{
+    position: absolute;
+    top: 680px;
+    left: 230px;
+}
+
+.neck-back-right{
+    position: absolute;
+    top: 680px;
+    left: 480px;
+}
+
+.neck-base{
+    position: absolute;
+    top: 750px;
+    left: 188px;
+}
+
+.neck-inside1{
+    position: absolute;
+    top: 700px;
+    left: 350px;
+}
+
+.neck-inside2{
+    position: absolute;
+    top: 770px;
+    left: 300px;
+}
+
