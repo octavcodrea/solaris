@@ -54,9 +54,10 @@ body{
 }
 
 .imageContainer{
+    // transform: scale(1.2);
     margin: auto;
     position: relative;
-    border: 2px dashed rgb(123, 123, 255);
+    // border: 2px dashed rgb(123, 123, 255);
     height: 900px;
     width: 800px;
 }
@@ -76,70 +77,194 @@ body{
 }
 
 .color1{
-    svg{
-        // fill: rgb(248, 214, 101);
-        // background-color: linear-gradient(31deg, rgba(125,243,255,1) 0%, rgba(185,134,255,1) 100%);
-    }
+    fill: rgb(248, 101, 162);
 }
 
 .headContainer{
     position: absolute;
     left: 150px;
+    top: -40px;
 
-    // #head-back-color, #head-back-lineart{
-    // }
-    
-    #head-front-color, #head-front-lineart{
-        z-index: 10;
+    .head-back{
+        position: absolute;
+        z-index: 5;
+        animation: float1 55s infinite;
+
+        #head-back-color{ 
+            animation: cycleColors2-darker 40s infinite;
+        }
+
+        #head-back-lineart{ 
+            animation: cycleColorsLineart1 40s infinite;
+        }
     }
+    
+    .head-front{
+        position: absolute;
+        z-index: 10;
+        animation: float1 55s infinite;
+
+        #head-front-color{ 
+            animation: cycleColors2 40s infinite;
+
+            .b{
+                animation: cycleColorsLights1 5s infinite;
+            }
+
+            .c{
+                animation: cycleColorsLights2 7s infinite;
+            }
+        }
+
+        #head-front-lineart{ 
+            animation: cycleColorsLineart1 40s infinite;
+        }
+    }
+    
 }
 
 .brain{
     position: absolute;
+    animation: float2 45s infinite;
+    
     left: 250px;
-    top: 200px;
-    z-index: 5;
+    top: 180px;
+    z-index: 7;
     // #brain-color, #brain-lineart{
     // }
+
+    .b{
+        animation: cycleColorsLights1 5s infinite;
+    }
+
+    .c{
+        animation: cycleColorsLights2 8s infinite;
+    }
+
+    .d{
+        animation: cycleColorsLights3 3s infinite;
+    }
+
+    #brain-color{
+        animation: cycleColors3 15s infinite;
+    }
+
+    #brain-lineart{
+        animation: cycleColorsLineart3 15s infinite;
+    }
 }
 
 .brain-wires{
+    animation: float3 180s infinite;
     position: absolute;
     left: 150px;
-    top: 180px;
-    z-index: 3;
+    top: 160px;
+    z-index: 6;
+
+    #brain-wires-color{
+        animation: cycleColors3 15s infinite;
+    }
+
+    #brain-wires-lineart{
+        animation: cycleColorsLineart3 15s infinite;
+    }
 }
 
 .faceContainer{
     position: absolute;
     left: 150px;
     top: 350px;
+    
 
-    #face-front-color, #face-front-lineart{
-        z-index: 10;
+    .face-front{
+        position: absolute;
+        z-index: 15;
+        animation: float3 80s infinite;
+
+        #face-front-lineart{
+            animation: cycleColorsLineart2 40s infinite;
+        }
+    
+        #face-front-color{
+            // z-index: 10;
+            animation: cycleColors2 40s infinite;
+
+            .b{
+                animation: cycleColorsLights2 8s infinite;
+            }
+
+            .c{
+                animation: cycleColorsLights3 8s infinite;
+            }
+        }
     }
+    
 
-    #face-back-color, #face-back-lineart{
+    .face-back{
+        position: absolute;
         top: -50px;
-        z-index: 0;
+        z-index: 1;
+        animation: float3 80s infinite;
+        
+        #face-back-color{
+            animation: cycleColors2-darker 40s infinite;
+        }
     }
 
-    #nose-color, #nose-lineart{
+    .nose{
+        position: absolute;
         z-index: 15;
         left: 193px;
         top: 20px;
+        animation: float3 80s infinite;
+
+        #nose-color{
+            animation: cycleColors1 40s infinite;
+        }
+
+        #nose-lineart{
+            animation: cycleColorsLineart1 40s infinite;
+        }
     }
 
-    #eye-left-color, #eye-left-lineart{
+    .eye-left{
+        position: absolute;
         z-index: 15;
         left: 50px;
         top: -10px;
+        animation: float3 80s infinite;
     }
 
-    #eye-right-color, #eye-right-lineart{
+    #eye-left-lineart{
+        animation: cycleColorsLineart1 40s infinite;
+    }
+
+    #eye-left-color{
+        animation: cycleColors4 40s infinite;
+
+        .b{
+            animation: cycleColorsLights1 4s infinite;
+        }
+    }
+
+    .eye-right{
+        position: absolute;
         z-index: 15;
         left: 323px;
         top: -10px;
+        animation: float3 80s infinite;
+
+        #eye-right-lineart{
+            animation: cycleColorsLineart1 40s infinite;
+        }
+
+        #eye-right-color{
+            animation: cycleColors4 40s infinite;
+
+            .b{
+                animation: cycleColorsLights1 4s infinite;
+            }
+        }
     }
 }
 
@@ -149,104 +274,607 @@ body{
     left: 285px;
     z-index: 10;
 
-    #mouth-back-color, #mouth-back-lineart{
-        top: -65px;
+    .mouth-front{
+        position: absolute;
+        animation: float1 90s infinite;
+        #mouth-front-color{
+            animation: cycleColors2 40s infinite;
 
+            .b{
+                animation: cycleColorsLights3 4s infinite;
+            }
+
+            .c{
+                animation: cycleColorsLights2 4s infinite;
+            }
+
+            .d{
+                animation: cycleColorsLights1 4s infinite;
+            }
+        }
+
+        #mouth-front-lineart{
+            animation: cycleColorsLineart2 40s infinite;
+        }
+        
+    }
+    
+    .mouth-back{
+        position: absolute;
+        top: -65px;
+        z-index: 0;
+        animation: float1 60s infinite;
+        #mouth-back-color{
+            animation: cycleColors2-darker 40s infinite;
+            
+            .b{
+                animation: cycleColorsLights3 4s infinite;
+            }
+
+            .c{
+                animation: cycleColorsLights2 4s infinite;
+            }
+
+            .d{
+                animation: cycleColorsLights1 4s infinite;
+            }
+        }
+
+        // #mouth-back-lineart{
+        // }
     }
 }
 
 .wires-mouth{
+    animation: float1 90s infinite;
     position: absolute;
     top: 500px;
     left: 200px;
+    
+    #wires-mouth-color{
+        animation: cycleColors3 15s infinite;
+    }
+
+    #wires-mouth-lineart{
+        animation: cycleColorsLineart3 15s infinite;
+    }
 }
 
 .cheek-left{
+    animation: float3 70s infinite;
     position: absolute;
     left: 170px;
     top: 500px;
     z-index: 5;
-    // #cheek-left-color, #cheek-left-lineart{
-    //     left: 50px;
-    // }
+
+    #cheek-left-color{
+        animation: cycleColors2 40s infinite;
+
+        .b{
+            animation: cycleColorsLights2 6s infinite;
+        }
+        .c{
+            animation: cycleColorsLights1 6s infinite;
+        }
+        .d{
+            animation: cycleColorsLights3 6s infinite;
+        }
+    }
+
+    #cheek-left-lineart{
+        animation: cycleColorsLineart1 40s infinite;
+    }
 }
 
 .cheek-right{
+    animation: float2 90s infinite;
     position: absolute;
     left: 505px;
     top: 500px;
     z-index: 5;
-    // #cheek-left-color, #cheek-left-lineart{
-    //     left: 50px;
-    // }
+    #cheek-right-color{
+        animation: cycleColors2 40s infinite;
+
+        .b{
+            animation: cycleColorsLights1 4s infinite;
+        }
+        .c{
+            animation: cycleColorsLights2 4s infinite;
+        }
+        .d{
+            animation: cycleColorsLights3 4s infinite;
+        }
+    }
+
+    #cheek-right-lineart{
+        animation: cycleColorsLineart1 40s infinite;
+    }
 }
 
 .ear-left{
     position: absolute;
-    left: 90px;
+    left: 60px;
     top: 370px;
+    animation: float1 90s infinite;
+    z-index: 0;
+
+    #ear-left-color{
+        animation: cycleColors1 40s infinite;
+
+        .b{
+            animation: cycleColorsLights3 10s infinite;
+        }
+        .c{
+            animation: cycleColorsLights2 10s infinite;
+        }
+        .d{
+            animation: cycleColorsLights1 5s infinite;
+        }
+    }
+
+    #ear-left-lineart{
+        animation: cycleColorsLineart1 40s infinite;
+    }
 }
 
 .ear-right{
     position: absolute;
-    left: 600px;
-    top: 370px;
+    left: 630px;
+    top: 390px;
+    animation: float3 75s infinite;
+    z-index: 0;
+
+    #ear-right-color{
+        animation: cycleColors1 40s infinite;
+
+        .b{
+            animation: cycleColorsLights2 10s infinite;
+        }
+        .c{
+            animation: cycleColorsLights1 10s infinite;
+        }
+        .d{
+            animation: cycleColorsLights3 10s infinite;
+        }
+    }
+
+    #ear-right-lineart{
+        animation: cycleColorsLineart1 40s infinite;
+    }
 }
 
 .neck-front{
+    animation: float1 90s infinite;
     position: absolute;
-    top: 680px;
+    top: 700px;
     left: 330px;
     z-index: 5;
+
+    #neck-front-color{
+        animation: cycleColors2 40s infinite;
+
+        .b{
+            animation: cycleColorsLights1 10s infinite;
+        }
+        .c{
+            animation: cycleColorsLights2 7s infinite;
+        }
+        .d{
+            animation: cycleColorsLights3 10s infinite;
+        }
+    }
+
+    #neck-front-lineart{
+        animation: cycleColorsLineart1 40s infinite;
+    }
 }
 
 .neck-front-left{
+    animation: float3 180s infinite;
     position: absolute;
-    top: 680px;
-    left: 230px;
+    top: 690px;
+    left: 210px;
     z-index: 5;
+
+    #neck-front-left-color{
+        animation: cycleColors1 40s infinite;
+
+        .b{
+            animation: cycleColorsLights1 7s infinite;
+        }
+
+        .c{
+            animation: cycleColorsLights3 4s infinite;
+        }
+
+        .d{
+            animation: cycleColorsLights2 4s infinite;
+        }
+    
+    }
+
+    #neck-front-left-lineart{
+        animation: cycleColorsLineart1 40s infinite;
+    }
 }
 
 .neck-front-right{
+    animation: float1 60s infinite;
     position: absolute;
-    top: 680px;
+    top: 700px;
     left: 480px;
     z-index: 5;
+
+    #neck-front-right-color{
+        animation: cycleColors1 40s infinite;
+
+        .b{
+            animation: cycleColorsLights1 7s infinite;
+        }
+
+        .c{
+            animation: cycleColorsLights2 4s infinite;
+        }
+
+        .d{
+            animation: cycleColorsLights3 4s infinite;
+        }
+    }
+
+    #neck-front-right-lineart{
+        animation: cycleColorsLineart1 40s infinite;
+    }
 }
 
 .neck-back{
+    animation: float3 90s infinite;
     position: absolute;
-    top: 680px;
+    top: 550px;
     left: 320px;
+    z-index: 5;
+
+    #neck-back-color{
+        animation: cycleColors2-darker 40s infinite;
+    }
 }
 
 .neck-back-left{
+    animation: float1 90s infinite;
     position: absolute;
-    top: 680px;
+    top: 650px;
     left: 230px;
+
+    #neck-back-left-color{
+        animation: cycleColors2-darker 40s infinite;
+    }
 }
 
 .neck-back-right{
+    animation: float2 90s infinite;
     position: absolute;
-    top: 680px;
+    top: 630px;
     left: 480px;
+
+    #neck-back-right-color{
+        animation: cycleColors2-darker 40s infinite;
+    }
 }
 
 .neck-base{
+    animation: float2 120s infinite;
     position: absolute;
-    top: 750px;
+    top: 780px;
     left: 188px;
+
+    #neck-base-color{
+        animation: cycleColors2 40s infinite;
+
+        .b{
+            animation: cycleColorsLights1 7s infinite;
+        }
+
+        .c{
+            animation: cycleColorsLights2 4s infinite;
+        }
+        
+        .d{
+            animation: cycleColorsLights3 4s infinite;
+        }
+    }
+
+    #neck-base-lineart{
+        animation: cycleColorsLineart2 40s infinite;
+    }
 }
 
 .neck-inside1{
+    animation: float2 90s infinite;
     position: absolute;
     top: 700px;
     left: 350px;
+
+    #neck-inside1-color{
+        animation: cycleColors3 40s infinite;
+    }
+
+    #neck-base-lineart{
+        animation: cycleColorsLineart3 40s infinite;
+    }
 }
 
 .neck-inside2{
+    animation: float3 110s infinite;
     position: absolute;
     top: 770px;
-    left: 300px;
+    left: 310px;
+    z-index: 3;
+
+    #neck-inside2-color{
+        animation: cycleColors3 40s infinite;
+    }
+
+    #neck-base-lineart{
+        animation: cycleColorsLineart3 40s infinite;
+    }
 }
 
+.background-circle{
+    position: absolute;
+}
+
+.circle1{
+    top: 100px;
+    left: 50px;
+
+    z-index: -1;
+    width: 400px;
+    height: 400px;
+    border-radius: 200px;
+    background-color: rgb(44, 0, 94);
+    animation: backgroundCircleMove1 30s infinite;
+}
+
+.circle2{
+    top: 300px;
+    left: 150px;
+
+    z-index: -1;
+    width: 400px;
+    height: 400px;
+    border-radius: 200px;
+    background-color: rgb(44, 0, 94);
+    animation: backgroundCircleMove1 25s infinite;
+}
+
+.circle3{
+    top: 50px;
+    right: 300px;
+
+    z-index: -1;
+    width: 300px;
+    height: 300px;
+    border-radius: 200px;
+    background-color: rgb(44, 0, 94);
+    animation: backgroundCircleMove1 40s infinite;
+}
+
+@keyframes backgroundCircleMove1{
+    0%{transform: translate(0px, 0px);}
+    33%{transform: translate(200px, 100px);}
+    66%{transform: translate(130px, 300px);}
+    100%{transform: translate(0px,0px);}
+}
+
+@keyframes float1{
+    0%{transform: rotate(0deg);}
+    20%{transform: rotate(5deg) translate(25px,30px);}
+    40%{transform: rotate(3deg) translate(-10px, 10px) ;}
+    60%{transform: rotate(2deg) translate(0px, -5px) ;}
+    80%{transform: rotate(-5deg) translate(10px,20px);}
+    100%{transform: rotate(0deg);}
+}
+
+@keyframes float2{
+    0%{transform: rotate(0deg);}
+    20%{transform: rotate(3deg) translate(0px,20px);}
+    40%{transform: rotate(-4deg) translate(-20px, -10px) ;}
+    60%{transform: rotate(2deg) translate(10px, -37px) ;}
+    80%{transform: rotate(6deg) translate(-5px, -10px);}
+    100%{transform: rotate(0deg);}
+}
+
+@keyframes float3{
+    0%{transform: rotate(0deg);}
+    20%{transform: rotate(4deg) translate(20px,10px);}
+    40%{transform: rotate(3deg) translate(-10px, 3px) ;}
+    60%{transform: rotate(-5deg) translate(3px,-39px) ;}
+    80%{transform: rotate(3deg) translate(15px, -10px);}
+    100%{transform: rotate(0deg);}
+}
+
+@keyframes cycleColors1{
+    0%{fill: rgb(255, 108, 108)}
+    15%{fill: rgb(255, 136, 202)}
+    30%{fill: rgb(159, 136, 224)}
+    45%{fill: rgb(125, 155, 255)}
+    60%{fill: rgb(159, 136, 224)}
+    75%{fill: rgb(255, 136, 202)}
+    100%{fill: rgb(255, 108, 108)}
+}
+
+@keyframes cycleColors2{
+    0%{fill: rgb(255, 81, 81)}
+    15%{fill: rgb(255, 125, 196)}
+    30%{fill: rgb(160, 125, 255)}
+    45%{fill: rgb(125, 177, 255)}
+    60%{fill: rgb(160, 125, 255)}
+    75%{fill: rgb(255, 125, 196)}
+    100%{fill: rgb(255, 81, 81)}
+}
+
+@keyframes cycleColors2-darker{
+    0%{fill: rgb(199, 49, 49)}
+    15%{fill: rgb(196, 66, 185)}
+    30%{fill: rgb(106, 76, 187)}
+    45%{fill: rgb(75, 133, 209)}
+    60%{fill: rgb(106, 76, 187)}
+    75%{fill: rgb(196, 66, 185)}
+    100%{fill: rgb(199, 49, 49)}
+}
+
+@keyframes cycleColors3{
+    0%{fill: rgb(160, 125, 255)}
+    33%{fill: rgb(64, 185, 255)}
+    66%{fill: rgb(205, 145, 255)}
+    100%{fill: rgb(160, 125, 255)}
+}
+
+@keyframes cycleColors4{
+    0%{fill: rgb(255, 149, 149)}
+    30%{fill: rgb(255, 231, 125)}
+    45%{fill: rgb(231, 255, 125)}
+    60%{fill: rgb(125, 255, 190)}
+    75%{fill: rgb(160, 125, 255)}
+    100%{fill: rgb(255, 149, 149)}
+}
+
+@keyframes cycleColorsLineart1{
+    0%{fill: rgb(40, 0, 78)}
+    25%{fill: rgb(88, 14, 148)}
+    50%{fill: rgb(81, 46, 206)}
+    75%{fill: rgb(88, 14, 148)}
+    100%{fill: rgb(40, 0, 78)}
+}
+
+@keyframes cycleColorsLineart2{
+    0%{fill: rgb(62, 11, 104)}
+    25%{fill: rgb(179, 30, 129)}
+    50%{fill: rgb(33, 94, 228)}
+    75%{fill: rgb(179, 30, 129)}
+    100%{fill: rgb(62, 11, 104)}
+}
+
+@keyframes cycleColorsLineart3{
+    0%{fill: rgb(43, 0, 78)}
+    25%{fill: rgb(31, 63, 204)}
+    50%{fill: rgb(68, 0, 131)}
+    75%{fill: rgb(31, 63, 204)}
+    100%{fill: rgb(43, 0, 78)}
+}
+
+@keyframes cycleColorsLights1{
+    0%{fill: rgb(255, 153, 153)}
+    25%{fill: rgb(255, 246, 125)}
+    50%{fill: rgb(125, 255, 153)}
+    75%{fill: rgb(125, 218, 255)}
+    100%{fill: rgb(255, 153, 153)}
+}
+
+@keyframes cycleColorsLights2{
+    0%{fill: rgb(255, 112, 212)}
+    25%{fill: rgb(227, 167, 255)}
+    50%{fill: rgb(125, 170, 255)}
+    75%{fill: rgb(125, 218, 255)}
+    100%{fill: rgb(255, 112, 212)}
+}
+
+@keyframes cycleColorsLights3{
+    0%{fill: rgb(255, 241, 112)}
+    25%{fill: rgb(170, 255, 167)}
+    50%{fill: rgb(125, 225, 255)}
+    75%{fill: rgb(125, 177, 255)}
+    100%{fill: rgb(255, 241, 112)}
+}
+
+
+.particleCircle{
+    opacity: 0;
+    bottom: -30px;
+    mix-blend-mode: screen;
+    position: absolute;
+    z-index: 0;
+    bottom: -100px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 25px;
+    background-color: rgb(147, 233, 255);
+
+    animation: particleFloat1 4s infinite;
+    animation-timing-function: linear;
+}
+
+#pC1{
+    left: 10%;
+}
+
+.background{
+    z-index: -10;
+    position:absolute;
+
+    width: 100%;
+    height: 150%;
+    background-color: rgb(27, 25, 27);
+}
+
+.background-grain {
+    z-index: 50;
+    display: inline-block;
+    position: absolute;
+    width: 100vw;
+    height: 120vh;
+    overflow: hidden;
+    top: -100px;
+
+    background-image: url(./Images/whitenoise-361x370.png);
+    background-repeat: repeat;
+    mix-blend-mode: darken;
+    animation:grain 3s steps(6) infinite;
+    
+}
+
+@keyframes grain {
+  0%, 100% {transform: translate(0,0);}
+  10% {transform: translate(-5%,-10%);}
+  30% {transform: translate(3%,-15%);}
+  50% {transform: translate(12%,9%);}
+  70% {transform: translate(9%,4%);}
+  90% {transform: translate(-1%,7%);}
+}
+
+@keyframes particleFloat1{
+    0%{transform: translate(0,0) scale(0.3);
+        opacity: 0.1;}
+    33%{transform: translate(0, -100px) scale(0.6);
+        opacity: 1;
+        background-color: rgb(142, 210, 255)}
+    66%{transform: translate(0, -200px) scale(1);
+        opacity: 1;}
+    100%{transform: translate(0,-300px) scale(0.3);
+        opacity: 0.1;
+        background-color: rgb(46, 119, 255)}
+}
+
+@keyframes particleFloat2{
+    0%{transform: translate(0,0) scale(0.3);
+        opacity: 0.1;}
+    33%{transform: translate(0, -150px) scale(0.6);
+        opacity: 1;}
+    66%{transform: translate(0, -300px) scale(1);
+        opacity: 1;}
+    100%{transform: translate(0,-500px) scale(0.3);
+        opacity: 0.1;
+        background-color: rgb(46, 119, 255)}
+}
+
+@keyframes particleFloat3{
+    0%{transform: translate(0,0) scale(0.3);
+        opacity: 0.1;}
+    33%{transform: translate(0, -125px) scale(0.6);
+        opacity: 1;}
+    66%{transform: translate(0, -250px) scale(1);
+        opacity: 1;}
+    100%{transform: translate(0,-400px) scale(0.3);
+        opacity: 0.1;
+        background-color: rgb(9, 68, 179)}
+}
