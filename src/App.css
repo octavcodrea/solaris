@@ -1432,7 +1432,7 @@ body {
   z-index: 50;
   display: inline-block;
   position: absolute;
-  width: 100vw;
+  width: 110vw;
   height: 120vh;
   overflow: hidden;
   top: -100px;
@@ -1449,24 +1449,24 @@ body {
             transform: translate(0, 0);
   }
   10% {
-    -webkit-transform: translate(-5%, -10%);
-            transform: translate(-5%, -10%);
+    -webkit-transform: translate(-25px, -50px);
+            transform: translate(-25px, -50px);
   }
   30% {
-    -webkit-transform: translate(3%, -15%);
-            transform: translate(3%, -15%);
+    -webkit-transform: translate(10px, -40px);
+            transform: translate(10px, -40px);
   }
   50% {
-    -webkit-transform: translate(12%, 9%);
-            transform: translate(12%, 9%);
+    -webkit-transform: translate(60px, 25px);
+            transform: translate(60px, 25px);
   }
   70% {
-    -webkit-transform: translate(9%, 4%);
-            transform: translate(9%, 4%);
+    -webkit-transform: translate(30px, 15px);
+            transform: translate(30px, 15px);
   }
   90% {
-    -webkit-transform: translate(-1%, 7%);
-            transform: translate(-1%, 7%);
+    -webkit-transform: translate(-5px, 30px);
+            transform: translate(-5px, 30px);
   }
 }
 
@@ -1476,24 +1476,24 @@ body {
             transform: translate(0, 0);
   }
   10% {
-    -webkit-transform: translate(-5%, -10%);
-            transform: translate(-5%, -10%);
+    -webkit-transform: translate(-25px, -50px);
+            transform: translate(-25px, -50px);
   }
   30% {
-    -webkit-transform: translate(3%, -15%);
-            transform: translate(3%, -15%);
+    -webkit-transform: translate(10px, -40px);
+            transform: translate(10px, -40px);
   }
   50% {
-    -webkit-transform: translate(12%, 9%);
-            transform: translate(12%, 9%);
+    -webkit-transform: translate(60px, 25px);
+            transform: translate(60px, 25px);
   }
   70% {
-    -webkit-transform: translate(9%, 4%);
-            transform: translate(9%, 4%);
+    -webkit-transform: translate(30px, 15px);
+            transform: translate(30px, 15px);
   }
   90% {
-    -webkit-transform: translate(-1%, 7%);
-            transform: translate(-1%, 7%);
+    -webkit-transform: translate(-5px, 30px);
+            transform: translate(-5px, 30px);
   }
 }
 

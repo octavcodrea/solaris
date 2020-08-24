@@ -824,7 +824,7 @@ body{
     z-index: 50;
     display: inline-block;
     position: absolute;
-    width: 100vw;
+    width: 110vw;
     height: 120vh;
     overflow: hidden;
     top: -100px;
@@ -838,11 +838,11 @@ body{
 
 @keyframes grain {
   0%, 100% {transform: translate(0,0);}
-  10% {transform: translate(-5%,-10%);}
-  30% {transform: translate(3%,-15%);}
-  50% {transform: translate(12%,9%);}
-  70% {transform: translate(9%,4%);}
-  90% {transform: translate(-1%,7%);}
+  10% {transform: translate(-25px,-50px);}
+  30% {transform: translate(10px,-40px);}
+  50% {transform: translate(60px,25px);}
+  70% {transform: translate(30px,15px);}
+  90% {transform: translate(-5px,30px);}
 }
 
 @keyframes particleFloat1{
