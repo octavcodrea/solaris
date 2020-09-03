@@ -53,6 +53,11 @@ body{
     overflow: hidden;
 }
 
+.App{
+    width: 100%;
+    height: 100%;
+}
+
 .imageContainer{
     // transform: scale(1.2);
     margin: auto;
@@ -60,6 +65,7 @@ body{
     // border: 2px dashed rgb(123, 123, 255);
     height: 900px;
     width: 800px;
+    animation: fadeIn 7s 1;
 }
 
 .image{
@@ -833,7 +839,20 @@ body{
     background-repeat: repeat;
     mix-blend-mode: darken;
     animation:grain 3s steps(6) infinite;
-    
+}
+
+// .popUpContainer{
+//     display: block;
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+
+// }
+
+.audioplayer{
+    z-index: 100;
+    display: flex;
+    width: 400px;
 }
 
 @keyframes grain {
@@ -880,4 +899,25 @@ body{
     100%{transform: translate(0,-400px) scale(0.3);
         opacity: 0.1;
         background-color: rgb(9, 68, 179)}
+}
+
+@keyframes textGlitch {
+    0%, 100% {font-family: 'Arial', sans-serif;}
+    33% {font-family: 'Times New Roman', serif;
+        // background-color: yellowgreen;
+        }
+    66% {font-family: 'Impact', sans-serif;}
+  }
+  
+@keyframes boxGlitch {
+    0%{transform: translate(0px,0px) scale(1);}
+    25%{transform: translate(1px, -2px) scale(1.01);}
+    50%{transform: translate(-1px, 2px) scale(0.99);}
+    75%{transform: translate(2px, 2px) scale(1.01);}
+    100%{transform: translate(-1px,2px) scale(0.99);}
+}
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1}
 }
