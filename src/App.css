@@ -62,15 +62,6 @@ body {
   height: 100%;
 }
 
-.imageContainer {
-  margin: auto;
-  position: relative;
-  height: 900px;
-  width: 800px;
-  -webkit-animation: fadeIn 7s 1;
-          animation: fadeIn 7s 1;
-}
-
 .image {
   position: absolute;
   display: inline-block;
@@ -777,18 +768,32 @@ body {
   0% {
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
+    background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
+  }
+  32% {
+    -webkit-transform: translate(200px, 100px);
+            transform: translate(200px, 100px);
+    background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
   }
   33% {
     -webkit-transform: translate(200px, 100px);
             transform: translate(200px, 100px);
+    background: radial-gradient(circle, #5e0034 0%, rgba(24, 22, 24, 0) 75%);
   }
   66% {
     -webkit-transform: translate(130px, 300px);
             transform: translate(130px, 300px);
+    background: radial-gradient(circle, #5e0034 0%, rgba(24, 22, 24, 0) 75%);
+  }
+  67% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    background: radial-gradient(circle, #004b5e 0%, rgba(24, 22, 24, 0) 75%);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
+    background: radial-gradient(circle, #004b5e 0%, rgba(24, 22, 24, 0) 75%);
   }
 }
 
@@ -796,18 +801,32 @@ body {
   0% {
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
+    background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
+  }
+  32% {
+    -webkit-transform: translate(200px, 100px);
+            transform: translate(200px, 100px);
+    background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
   }
   33% {
     -webkit-transform: translate(200px, 100px);
             transform: translate(200px, 100px);
+    background: radial-gradient(circle, #5e0034 0%, rgba(24, 22, 24, 0) 75%);
   }
   66% {
     -webkit-transform: translate(130px, 300px);
             transform: translate(130px, 300px);
+    background: radial-gradient(circle, #5e0034 0%, rgba(24, 22, 24, 0) 75%);
+  }
+  67% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    background: radial-gradient(circle, #004b5e 0%, rgba(24, 22, 24, 0) 75%);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
+    background: radial-gradient(circle, #004b5e 0%, rgba(24, 22, 24, 0) 75%);
   }
 }
 
@@ -1468,6 +1487,7 @@ body {
 .rhap_container .rhap_main {
   background-color: black;
   color: #f454ff;
+  padding-right: 8px;
 }
 
 .rhap_container .rhap_main .rhap_progress-section .rhap_progress-container {
@@ -1771,7 +1791,7 @@ body {
 
 @-webkit-keyframes fadeIn {
   0% {
-    opacity: 0;
+    opacity: 0.1;
   }
   100% {
     opacity: 1;
@@ -1780,7 +1800,7 @@ body {
 
 @keyframes fadeIn {
   0% {
-    opacity: 0;
+    opacity: 0.1;
   }
   100% {
     opacity: 1;

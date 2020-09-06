@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {CSSProperties} from 'react';
 import ImagePart from '../ImagePart/ImagePart';
 
 const formatParticle = (element: any) =>{
@@ -21,22 +21,52 @@ const formatParticle = (element: any) =>{
     )
 }
 
-class ImageContainer extends React.Component{
+
+interface icProps{
+    playStarted: boolean
+}
+
+interface icState{
+
+}
+
+interface StylesDictionary{
+    [Key: string]: CSSProperties;
+}
+
+
+class ImageContainer extends React.Component<icProps, icState>{
+
+    styles:StylesDictionary  = {
+        icIntroStyle:{
+            margin: 'auto',
+            position: 'relative',
+            height: '900px',
+            width: '800px',
+            opacity: '0.1'
+            // mixBlendMode: 'screen'
+            
+        },
+
+        icPlayingStyle:{
+            margin: 'auto',
+            position: 'relative',
+            height: '900px',
+            width: '800px',
+            animation: 'fadeIn 7s 1'
+        },
+    }
 
     arr = ["pC1", "pC2", "pC3", "pC4", "pC5", "pC6", "pC7", "pC8" ];
 
-
     particles = this.arr.map(element => 
-
         formatParticle(element)
     )
     
-
-
-
     render(){
         return(
-            <div className="imageContainer">
+            <div className="imageContainer" 
+            style={this.props.playStarted? this.styles.icPlayingStyle : this.styles.icIntroStyle}>
                 <div className="headContainer">
                     <div className="head-front">
                         <ImagePart imagetype='head-front-color'/>

@@ -34,11 +34,12 @@ const AudioComponent = (props: AudioCompProps) =>{
       
             width: '200px',
             // padding: '10px',
-            bottom: '70%',
+            bottom: '60%',
             right: '50%',
             transform: 'scale(2) translateX(25%)',
             boxShadow: '10px 10px 78px -6px rgba(0,0,50,0.75)',
-            transition: '2s'
+            transition: '2s',
+            animation: 'fadeIn 2s 1'
           //   backgroundColor: "red"
         }
       }

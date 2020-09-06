@@ -58,15 +58,6 @@ body{
     height: 100%;
 }
 
-.imageContainer{
-    // transform: scale(1.2);
-    margin: auto;
-    position: relative;
-    // border: 2px dashed rgb(123, 123, 255);
-    height: 900px;
-    width: 800px;
-    animation: fadeIn 7s 1;
-}
 
 .image{
     // left: 35%;
@@ -666,10 +657,18 @@ body{
 }
 
 @keyframes backgroundCircleMove1{
-    0%{transform: translate(0px, 0px);}
-    33%{transform: translate(200px, 100px);}
-    66%{transform: translate(130px, 300px);}
-    100%{transform: translate(0px,0px);}
+    0%{transform: translate(0px, 0px);
+        background: radial-gradient(circle, rgba(51,17,115,1) 0%, rgba(24,22,24,0) 75%);}
+    32%{transform: translate(200px, 100px);
+        background: radial-gradient(circle, rgba(51,17,115,1) 0%, rgba(24,22,24,0) 75%);}
+    33%{transform: translate(200px, 100px);
+        background: radial-gradient(circle, rgb(94, 0, 52) 0%, rgba(24,22,24,0) 75%);}
+    66%{transform: translate(130px, 300px);
+        background: radial-gradient(circle, rgb(94, 0, 52) 0%, rgba(24,22,24,0) 75%);}
+    67%{transform: translate(0px,0px);
+        background: radial-gradient(circle, rgb(0, 75, 94) 0%, rgba(24,22,24,0) 75%);}
+    100%{transform: translate(0px,0px);
+        background: radial-gradient(circle, rgb(0, 75, 94) 0%, rgba(24,22,24,0) 75%);}
 }
 
 @keyframes float1{
@@ -869,6 +868,7 @@ body{
     .rhap_main{
         background-color: black;
         color: #f454ff;
+        padding-right: 8px;
 
         .rhap_progress-section{
             .rhap_progress-container{
@@ -969,6 +969,6 @@ body{
 }
 
 @keyframes fadeIn{
-    0% {opacity: 0;}
+    0% {opacity: 0.1;}
     100% {opacity: 1}
 }

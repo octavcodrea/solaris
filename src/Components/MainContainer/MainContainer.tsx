@@ -29,14 +29,18 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
     render(){
         return(
             <div>
-                <PopUpContainer playStarted={this.state.playStarted}/>
+                <PopUpContainer 
+                    playStarted={this.state.playStarted}
+                />
 
-                <ImageContainer />
+                <ImageContainer 
+                    playStarted={this.state.playStarted}
+                />
 
                 <AudioComponent
                     startPlaying={this.startPlaying}
                     playStarted={this.state.playStarted}
-                    />
+                />
             </div>
         );
     }
