@@ -850,9 +850,60 @@ body{
 // }
 
 .audioplayer{
+    position: absolute;
     z-index: 100;
     display: flex;
-    width: 400px;
+    
+    // width: 200px;
+    // padding: 10px;
+    // top: 100px;
+    // left: 10px;
+}
+
+.rhap_container{
+    background-color: black !important;
+    color: #f454ff;
+
+    transition: 2s;
+
+    .rhap_main{
+        background-color: black;
+        color: #f454ff;
+
+        .rhap_progress-section{
+            .rhap_progress-container{
+                display: none;
+            }
+
+            .rhap_total-time{
+                display: none;
+            }
+
+            .rhap_current-time{
+                display: none;
+            }
+        }
+
+        .rhap_additional-controls{
+            display: none;
+        }
+
+        .rhap_main-controls{
+            .rhap_rewind-button{
+                display: none;
+            }
+
+            .rhap_play-pause-button{
+                display: block;
+                color: #f454ff;
+            }
+
+            .rhap_forward-button{
+                display: none;
+            }
+            
+        }
+    }
 }
 
 @keyframes grain {

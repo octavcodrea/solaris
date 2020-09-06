@@ -1451,11 +1451,52 @@ body {
 }
 
 .audioplayer {
+  position: absolute;
   z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 400px;
+}
+
+.rhap_container {
+  background-color: black !important;
+  color: #f454ff;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.rhap_container .rhap_main {
+  background-color: black;
+  color: #f454ff;
+}
+
+.rhap_container .rhap_main .rhap_progress-section .rhap_progress-container {
+  display: none;
+}
+
+.rhap_container .rhap_main .rhap_progress-section .rhap_total-time {
+  display: none;
+}
+
+.rhap_container .rhap_main .rhap_progress-section .rhap_current-time {
+  display: none;
+}
+
+.rhap_container .rhap_main .rhap_additional-controls {
+  display: none;
+}
+
+.rhap_container .rhap_main .rhap_main-controls .rhap_rewind-button {
+  display: none;
+}
+
+.rhap_container .rhap_main .rhap_main-controls .rhap_play-pause-button {
+  display: block;
+  color: #f454ff;
+}
+
+.rhap_container .rhap_main .rhap_main-controls .rhap_forward-button {
+  display: none;
 }
 
 @-webkit-keyframes grain {

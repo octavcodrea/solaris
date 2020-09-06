@@ -3,6 +3,7 @@ import React, { CSSProperties } from 'react';
 // import ImageContainer from '../ImageContainer/ImageContainer';
 
 interface IProps {
+    playStarted: boolean
 }
 
 interface IState {
@@ -86,7 +87,7 @@ class PopUpContainer extends React.Component<IProps, IState>{
 
 
     handlePopUps = () =>{
-        if(this.state.counterStarted === false){
+        if(this.state.counterStarted === false && this.props.playStarted){
             this.setState({
                 counterStarted: true
             })
@@ -295,7 +296,6 @@ class PopUpContainer extends React.Component<IProps, IState>{
             this.forceUpdate()
         )
     }
-
 
     deleteTextPopUp = (PUid: string) =>{
         var myobj = document.getElementById(PUid);
