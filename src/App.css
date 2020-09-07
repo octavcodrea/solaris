@@ -266,8 +266,8 @@ body {
 }
 
 .faceContainer #eye-left-color .b {
-  -webkit-animation: cycleColorsLights1 4s infinite;
-          animation: cycleColorsLights1 4s infinite;
+  -webkit-animation: cycleColorsLights1 4s steps(5) infinite;
+          animation: cycleColorsLights1 4s steps(5) infinite;
 }
 
 .faceContainer .eye-right {
@@ -290,8 +290,8 @@ body {
 }
 
 .faceContainer .eye-right #eye-right-color .b {
-  -webkit-animation: cycleColorsLights1 4s infinite;
-          animation: cycleColorsLights1 4s infinite;
+  -webkit-animation: cycleColorsLights1 4s steps(5) infinite;
+          animation: cycleColorsLights1 4s steps(5) infinite;
 }
 
 .mouthContainer {
@@ -358,6 +358,11 @@ body {
 .mouthContainer .mouth-back #mouth-back-color .d {
   -webkit-animation: cycleColorsLights1 4s infinite;
           animation: cycleColorsLights1 4s infinite;
+}
+
+.mouthContainer .mouth-back #mouth-back-color .e {
+  -webkit-animation: voiceBox 20s steps(5) infinite;
+          animation: voiceBox 20s steps(5) infinite;
 }
 
 .wires-mouth {
@@ -729,39 +734,53 @@ body {
 .background-circle {
   position: absolute;
   background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
+  z-index: -1;
+  border-radius: 300px;
 }
 
 .circle1 {
   top: 100px;
   left: 50px;
-  z-index: -1;
   width: 400px;
   height: 400px;
-  border-radius: 200px;
-  -webkit-animation: backgroundCircleMove1 30s infinite;
-          animation: backgroundCircleMove1 30s infinite;
+  -webkit-animation: backgroundCircleMove1 30s steps(5) infinite;
+          animation: backgroundCircleMove1 30s steps(5) infinite;
 }
 
 .circle2 {
   top: 300px;
   left: 150px;
-  z-index: -1;
-  width: 400px;
-  height: 400px;
-  border-radius: 200px;
-  -webkit-animation: backgroundCircleMove1 25s infinite;
-          animation: backgroundCircleMove1 25s infinite;
+  width: 600px;
+  height: 600px;
+  -webkit-animation: backgroundCircleMove1 25s steps(5) infinite;
+          animation: backgroundCircleMove1 25s steps(5) infinite;
 }
 
 .circle3 {
   top: 50px;
   right: 300px;
-  z-index: -1;
-  width: 300px;
-  height: 300px;
-  border-radius: 200px;
-  -webkit-animation: backgroundCircleMove1 40s infinite;
-          animation: backgroundCircleMove1 40s infinite;
+  width: 500px;
+  height: 500px;
+  -webkit-animation: backgroundCircleMove1 40s steps(5) infinite;
+          animation: backgroundCircleMove1 40s steps(5) infinite;
+}
+
+.circle4 {
+  bottom: 300px;
+  left: 150px;
+  width: 600px;
+  height: 600px;
+  -webkit-animation: backgroundCircleMove1 15s steps(5) infinite;
+          animation: backgroundCircleMove1 15s steps(5) infinite;
+}
+
+.circle5 {
+  top: 50px;
+  right: 300px;
+  width: 500px;
+  height: 500px;
+  -webkit-animation: backgroundCircleMove1 7s steps(5) infinite;
+          animation: backgroundCircleMove1 7s steps(5) infinite;
 }
 
 @-webkit-keyframes backgroundCircleMove1 {
@@ -770,25 +789,18 @@ body {
             transform: translate(0px, 0px);
     background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
   }
-  32% {
-    -webkit-transform: translate(200px, 100px);
-            transform: translate(200px, 100px);
-    background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
+  25% {
+    -webkit-transform: translate(-100px, 0px);
+            transform: translate(-100px, 0px);
   }
-  33% {
+  50% {
     -webkit-transform: translate(200px, 100px);
             transform: translate(200px, 100px);
     background: radial-gradient(circle, #5e0034 0%, rgba(24, 22, 24, 0) 75%);
   }
-  66% {
-    -webkit-transform: translate(130px, 300px);
-            transform: translate(130px, 300px);
-    background: radial-gradient(circle, #5e0034 0%, rgba(24, 22, 24, 0) 75%);
-  }
-  67% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-    background: radial-gradient(circle, #004b5e 0%, rgba(24, 22, 24, 0) 75%);
+  75% {
+    -webkit-transform: translate(100px, -100px);
+            transform: translate(100px, -100px);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
@@ -803,25 +815,18 @@ body {
             transform: translate(0px, 0px);
     background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
   }
-  32% {
-    -webkit-transform: translate(200px, 100px);
-            transform: translate(200px, 100px);
-    background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
+  25% {
+    -webkit-transform: translate(-100px, 0px);
+            transform: translate(-100px, 0px);
   }
-  33% {
+  50% {
     -webkit-transform: translate(200px, 100px);
             transform: translate(200px, 100px);
     background: radial-gradient(circle, #5e0034 0%, rgba(24, 22, 24, 0) 75%);
   }
-  66% {
-    -webkit-transform: translate(130px, 300px);
-            transform: translate(130px, 300px);
-    background: radial-gradient(circle, #5e0034 0%, rgba(24, 22, 24, 0) 75%);
-  }
-  67% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-    background: radial-gradient(circle, #004b5e 0%, rgba(24, 22, 24, 0) 75%);
+  75% {
+    -webkit-transform: translate(100px, -100px);
+            transform: translate(100px, -100px);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
@@ -1424,6 +1429,84 @@ body {
   }
 }
 
+@-webkit-keyframes voiceBox {
+  0% {
+    fill: #b31e81;
+  }
+  10% {
+    fill: #83a0ff;
+  }
+  15% {
+    fill: #b31e81;
+  }
+  20% {
+    fill: #ab85e9;
+  }
+  30% {
+    fill: #b31e81;
+  }
+  45% {
+    fill: #83a0ff;
+  }
+  55% {
+    fill: #741a56;
+  }
+  60% {
+    fill: #b31e81;
+  }
+  65% {
+    fill: #741a56;
+  }
+  80% {
+    fill: #ab85e9;
+  }
+  90% {
+    fill: #741a56;
+  }
+  100% {
+    fill: #b31e81;
+  }
+}
+
+@keyframes voiceBox {
+  0% {
+    fill: #b31e81;
+  }
+  10% {
+    fill: #83a0ff;
+  }
+  15% {
+    fill: #b31e81;
+  }
+  20% {
+    fill: #ab85e9;
+  }
+  30% {
+    fill: #b31e81;
+  }
+  45% {
+    fill: #83a0ff;
+  }
+  55% {
+    fill: #741a56;
+  }
+  60% {
+    fill: #b31e81;
+  }
+  65% {
+    fill: #741a56;
+  }
+  80% {
+    fill: #ab85e9;
+  }
+  90% {
+    fill: #741a56;
+  }
+  100% {
+    fill: #b31e81;
+  }
+}
+
 .particleCircle {
   opacity: 0;
   bottom: -30px;
@@ -1436,6 +1519,7 @@ body {
   height: 20px;
   border-radius: 25px;
   background-color: #93e9ff;
+  background: radial-gradient(circle, #388eff 0%, #181618 40%);
   -webkit-animation: particleFloat1 4s infinite;
           animation: particleFloat1 4s infinite;
   -webkit-animation-timing-function: linear;
@@ -1444,6 +1528,17 @@ body {
 
 #pC1 {
   left: 10%;
+}
+
+.foreground-overlay {
+  position: absolute;
+  mix-blend-mode: multiply;
+  z-index: 50;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(9, 54, 124, 0) 17%, #121010 68%);
 }
 
 .background {
@@ -1465,8 +1560,74 @@ body {
   background-image: url(./Images/whitenoise-361x370.png);
   background-repeat: repeat;
   mix-blend-mode: darken;
-  -webkit-animation: grain 3s steps(6) infinite;
-          animation: grain 3s steps(6) infinite;
+  -webkit-animation: grain 3s steps(3) infinite;
+          animation: grain 3s steps(3) infinite;
+}
+
+#introCard {
+  font-family: 'Courier New', Courier, monospace;
+  display: block;
+  position: absolute;
+  background-color: #f454ff;
+}
+
+#introCard h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: default;
+}
+
+#introCard h2 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  display: inline-block;
+  cursor: default;
+}
+
+#introCard h2:hover {
+  color: white;
+}
+
+#introCard p {
+  background-color: white;
+  font-size: 1.5rem;
+  padding: 5px 15px;
+  cursor: default;
+}
+
+.introCard-active {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 50%;
+  padding: 20px;
+  z-index: 100;
+  -webkit-transition: 2s;
+  transition: 2s;
+  -webkit-animation: fadeIn 2s 1;
+          animation: fadeIn 2s 1;
+}
+
+.introCard-active ::-moz-selection {
+  background-color: #003cff;
+  color: white;
+}
+
+.introCard-active ::selection {
+  background-color: #003cff;
+  color: white;
+}
+
+.introCard-inactive {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: -20%;
+  padding: 20px;
+  z-index: 100;
+  opacity: 0%;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .audioplayer {
@@ -1475,6 +1636,11 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 68px;
+}
+
+.audioplayer:hover {
+  opacity: 1;
 }
 
 .rhap_container {

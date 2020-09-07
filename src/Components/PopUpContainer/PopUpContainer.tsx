@@ -82,6 +82,7 @@ class PopUpContainer extends React.Component<IProps, IState>{
         }
     }
 
+<<<<<<< Updated upstream
 
     PopUpList = [(<div ></div>),(<div></div>)]
 
@@ -247,6 +248,103 @@ class PopUpContainer extends React.Component<IProps, IState>{
 
     }
 
+=======
+    PopUpList = [(<div ></div>)];
+
+    arrayIndex = 0;
+    initializerArray = [0]
+    completedAction = this.initializerArray.fill(0, 0, popups.length);
+
+
+    handlePopUps2 = (playTime: number) =>{
+        // console.log("[PUC]: handlePopUps2 initiated, arrayIndex:", this.arrayIndex);
+        // console.log("[PUC]: arrayIndex", this.arrayIndex);
+
+        let currentItem = popups[this.arrayIndex];
+        // console.log(popups[this.arrayIndex]);
+
+        if(currentItem.completed === false){
+            // console.log("this.completedAction:", this.completedAction[this.arrayIndex])
+            if (currentItem.timestamp === playTime){
+                // console.log('penis');
+                switch(currentItem.action){
+                    default: {
+                        this.createTextPopUp(
+                            currentItem.style,
+                            String(currentItem.left),
+                            String(currentItem.top),
+                            currentItem.text,
+                            `pu-${currentItem.timestamp}` );
+                        setTimeout(() => this.deleteTextPopUp(`pu-${currentItem.timestamp}`), currentItem.duration)
+
+                        // this.completedAction[this.arrayIndex] = 1;
+                        this.arrayIndex ++;
+                        currentItem.completed = true;
+                        
+                        break;
+                    }
+
+                    case 'createTextPopUp': {
+                        this.createTextPopUp(
+                            currentItem.style,
+                            String(currentItem.left),
+                            String(currentItem.top),
+                            currentItem.text,
+                            `pu-${currentItem.timestamp}` );
+                        setTimeout(() => this.deleteTextPopUp(`pu-${currentItem.timestamp}`), currentItem.duration);
+                        
+                        // this.completedAction[this.arrayIndex] = 1;
+                        this.arrayIndex ++;
+                        currentItem.completed = true;
+                        
+                        break;
+                    }
+
+                    case 'createTextPopUp-for': {
+                        // debugger;
+                        for (let x=0; x < currentItem.repeat; x++){
+                            console.log("left: ",currentItem.left + (currentItem.leftOffset * x), "top: ",currentItem.top + (currentItem.topOffset * x));
+
+                            let functionleft = "";
+                            let functiontop = "";
+                            switch(currentItem.functionLeft){
+                                default:  functionleft = String(currentItem.left + (currentItem.leftOffset) * x); break;
+                                case "%5":  functionleft = String(currentItem.left + (x % currentItem.leftOffset) * 5); break;
+                                case "*":  functionleft = String(currentItem.left + (currentItem.leftOffset) * x); break;
+                                case "%10":  functionleft = String(currentItem.left + (x % currentItem.leftOffset) * 10); break;
+                                case "*5":  functionleft = String(currentItem.left + (currentItem.leftOffset) * x); break;
+                            }
+
+                            switch(currentItem.functionTop){
+                                default:  functiontop = String(currentItem.top + (currentItem.topOffset) * x); break;
+                                case "%5":  functiontop = String(currentItem.top + (x % currentItem.topOffset) * 5); break;
+                                case "*":  functiontop = String(currentItem.top + (currentItem.topOffset) * x); break;
+                                case "%10":  functiontop = String(currentItem.top + (x % currentItem.topOffset) * 10); break;
+                                case "*5":  functiontop = String(currentItem.top + (currentItem.topOffset) * x); break;
+                            }
+
+                            this.createTextPopUp(
+                                currentItem.style,
+                                functionleft,
+                                functiontop,
+                                currentItem.text,
+                                `pu-${currentItem.timestamp}-${x}` );
+                            setTimeout(() => this.deleteTextPopUp(`pu-${currentItem.timestamp}-${x}`), currentItem.duration);
+                        }
+                        
+                        //((i % 5)*8)
+                        // this.completedAction[this.arrayIndex] = 1;
+                        this.arrayIndex ++;
+                        currentItem.completed = true;
+                        
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+>>>>>>> Stashed changes
     createTextPopUp = (popupstyle: string, positionX: string, positionY: string, text: string, PUid: string) =>{
         let appliedstyle = { 
             ...this.styles.popUpStyle1
@@ -282,12 +380,6 @@ class PopUpContainer extends React.Component<IProps, IState>{
             <div style={appliedstyle}  id={PUid}>
                 {text}
             </div>);
-
-        // let element = React.createElement(
-        //     "div",
-        //     { style: appliedstyle, left: {posX}, top: {posY}, id: {PUid}},
-        //     {text}
-        // )
 
         return(
             this.PopUpList.push(

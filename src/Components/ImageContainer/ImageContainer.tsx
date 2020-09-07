@@ -212,6 +212,12 @@ class ImageContainer extends React.Component<icProps, icState>{
                 <div className="background-circle circle3">
                 </div>
 
+                <div className="background-circle circle4">
+                </div>
+
+                <div className="background-circle circle5">
+                </div>
+
                 {this.particles}
 
             </div>

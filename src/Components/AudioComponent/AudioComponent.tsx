@@ -23,7 +23,9 @@ const AudioComponent = (props: AudioCompProps) =>{
           padding: '10px',
           bottom: '1px',
           right: '1px',
-          transition: "2s"
+          transition: "2s",
+
+          opacity: '0.4'
         //   backgroundColor: "red"
         },
     
@@ -39,7 +41,8 @@ const AudioComponent = (props: AudioCompProps) =>{
             transform: 'scale(2) translateX(25%)',
             boxShadow: '10px 10px 78px -6px rgba(0,0,50,0.75)',
             transition: '2s',
-            animation: 'fadeIn 2s 1'
+            animation: 'fadeIn 2s 1',
+            opacity: 1
           //   backgroundColor: "red"
         }
       }
