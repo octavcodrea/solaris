@@ -13,14 +13,9 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< Updated upstream
-      {/* <div className="background"></div> */}
-      {/* <div className="background-grain"></div> */}
-=======
       <div className="foreground-overlay"></div>
       <div className="background"></div>
       <div className="background-grain"></div>
->>>>>>> Stashed changes
       <MainContainer />
     </div>
   );
