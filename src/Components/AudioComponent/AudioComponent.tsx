@@ -8,7 +8,8 @@ interface StylesDictionary{
 
 interface AudioCompProps{
     startPlaying: any,
-    playStarted: boolean
+    playStarted: boolean,
+    pausePlaying: any
 }
 
 const AudioComponent = (props: AudioCompProps) =>{
@@ -54,6 +55,7 @@ const AudioComponent = (props: AudioCompProps) =>{
             // autoPlay
             src="http://solaris.octavcodrea.com/speech.mp3"
             onPlay={props.startPlaying}
+            onPause={props.pausePlaying}
             // other props here
         />
 
