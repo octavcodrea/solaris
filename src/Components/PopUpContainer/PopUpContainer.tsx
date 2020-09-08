@@ -6,7 +6,9 @@ import popups from '../popups';
 interface IProps {
     playStarted: boolean,
     playTime: number,
-    isPlaying: boolean
+    isPlaying: boolean,
+    flickerEyesProp: boolean,
+    flickerEyesFunc: any
 }
 
 interface IState {
@@ -26,6 +28,9 @@ class PopUpContainer extends React.Component<IProps, IState>{
         }
     }
 
+    uicolor1 = "#ff2d6c";
+    uicolor2 = "#18ffb2";
+
     styles:StylesDictionary  = {
         popUpStyle1:{
             display: 'block',
@@ -36,8 +41,8 @@ class PopUpContainer extends React.Component<IProps, IState>{
             width: 'auto',
             height: 'auto',
             color: "black",
-            backgroundColor: "#f454ff",
-            padding: "10px",
+            backgroundColor: this.uicolor1,
+            padding: "15px",
             fontFamily: "'Courier New', Courier, monospace",
             // left: {value: "0%", writable: true},
             // top: {value: "0%", writable: true},
@@ -56,8 +61,8 @@ class PopUpContainer extends React.Component<IProps, IState>{
             width: 'auto',
             height: 'auto',
             color: "black",
-            backgroundColor: "#f454ff",
-            padding: "10px",
+            backgroundColor: this.uicolor1,
+            padding: "15px",
             fontFamily: "'Courier New', Courier, monospace",
             // left: {value: "0%", writable: true},
             // top: {value: "0%", writable: true},
@@ -73,9 +78,28 @@ class PopUpContainer extends React.Component<IProps, IState>{
             textAlign: 'center',
             width: 'auto',
             height: 'auto',
-            color: "#f454ff",
+            color: this.uicolor1,
             backgroundColor: "#000000",
-            padding: "10px",
+            padding: "15px",
+            fontFamily: "'Courier New', Courier, monospace",
+            // left: {value: "0%", writable: true},
+            // top: {value: "0%", writable: true},
+            zIndex: 50,
+            animation: "boxGlitch 0.5s infinite",
+            animationTimingFunction: "step-end"
+        },
+
+        popUpStyle3:{
+            display: 'block',
+            position: 'absolute',
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            width: 'auto',
+            height: 'auto',
+            color: this.uicolor2,
+            backgroundColor: "#000000",
+            padding: "15px",
             fontFamily: "'Courier New', Courier, monospace",
             // left: {value: "0%", writable: true},
             // top: {value: "0%", writable: true},
@@ -116,6 +140,7 @@ class PopUpContainer extends React.Component<IProps, IState>{
                         // this.completedAction[this.arrayIndex] = 1;
                         this.arrayIndex ++;
                         currentItem.completed = true;
+                        if (currentItem.flickerEyes) this.props.flickerEyesFunc();
                         
                         break;
                     }
@@ -132,6 +157,7 @@ class PopUpContainer extends React.Component<IProps, IState>{
                         // this.completedAction[this.arrayIndex] = 1;
                         this.arrayIndex ++;
                         currentItem.completed = true;
+                        if (currentItem.flickerEyes) this.props.flickerEyesFunc();
                         
                         break;
                     }
@@ -172,7 +198,8 @@ class PopUpContainer extends React.Component<IProps, IState>{
                         // this.completedAction[this.arrayIndex] = 1;
                         this.arrayIndex ++;
                         currentItem.completed = true;
-                        
+                        if (currentItem.flickerEyes) this.props.flickerEyesFunc();
+
                         break;
                     }
                 }
@@ -202,10 +229,10 @@ class PopUpContainer extends React.Component<IProps, IState>{
                     }; break;}
 
             case "style3":
-                {
-
-                }
-            
+                {appliedstyle = { 
+                ...this.styles.popUpStyle3
+                    }; break;}
+        
         }
 
         appliedstyle.left = positionX + '%';
@@ -225,9 +252,13 @@ class PopUpContainer extends React.Component<IProps, IState>{
     }
 
     deleteTextPopUp = (PUid: string) =>{
-        var myobj = document.getElementById(PUid);
-        if(myobj) myobj.remove();
-        this.forceUpdate()
+        if(this.props.isPlaying === true){
+            var myobj = document.getElementById(PUid);
+            if(myobj) myobj.remove();
+            this.forceUpdate()
+        }else{
+            setTimeout(() => this.deleteTextPopUp(PUid),250);
+        }
     }
 
     render(){

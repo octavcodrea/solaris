@@ -1538,7 +1538,7 @@ body {
   left: 0px;
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle, rgba(9, 54, 124, 0) 17%, #121010 68%);
+  background: radial-gradient(circle, rgba(9, 54, 124, 0) 27%, #121010 68%);
 }
 
 .background {
@@ -1568,7 +1568,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   display: block;
   position: absolute;
-  background-color: #f454ff;
+  background-color: #ff2d6c;
 }
 
 #introCard h1 {
@@ -1645,14 +1645,14 @@ body {
 
 .rhap_container {
   background-color: black !important;
-  color: #f454ff;
+  color: #ff2d6c;
   -webkit-transition: 2s;
   transition: 2s;
 }
 
 .rhap_container .rhap_main {
   background-color: black;
-  color: #f454ff;
+  color: #ff2d6c;
   padding-right: 8px;
 }
 
@@ -1678,7 +1678,7 @@ body {
 
 .rhap_container .rhap_main .rhap_main-controls .rhap_play-pause-button {
   display: block;
-  color: #f454ff;
+  color: #ff2d6c;
 }
 
 .rhap_container .rhap_main .rhap_main-controls .rhap_forward-button {
@@ -1970,6 +1970,42 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes eyesFlicker {
+  0% {
+    fill: #ff9999;
+  }
+  25% {
+    fill: #5f5900;
+  }
+  50% {
+    fill: #7dff99;
+  }
+  75% {
+    fill: #003f58;
+  }
+  100% {
+    fill: #380000;
+  }
+}
+
+@keyframes eyesFlicker {
+  0% {
+    fill: #ff9999;
+  }
+  25% {
+    fill: #5f5900;
+  }
+  50% {
+    fill: #7dff99;
+  }
+  75% {
+    fill: #003f58;
+  }
+  100% {
+    fill: #380000;
   }
 }
 /*# sourceMappingURL=App.css.map */

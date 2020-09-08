@@ -11,7 +11,8 @@ interface MainContainerProps{
 interface MainContainerState{
     playStarted: boolean,
     playTime: number,
-    isPlaying: boolean
+    isPlaying: boolean,
+    flickerEyes: boolean
 }
 
 class MainContainer extends React.Component<MainContainerProps, MainContainerState>{
@@ -21,30 +22,55 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
         this.state = {
             playStarted: false,
             playTime: 0, 
-            isPlaying: false
+            isPlaying: false,
+            flickerEyes: false
         }
     }
 
     startPlaying = () =>{
-        if(this.state.isPlaying === true){
-            this.setState({
-                playTime: this.state.playTime + 50
-            })
-            // console.log("playtime:", this.state.playTime);
-        }else{
+        if(this.state.playStarted === false){
             this.setState({
                 playStarted: true,
-                isPlaying:true
-            })
-        }
+                isPlaying: true
+            });
 
-        setTimeout(() => this.startPlaying(), 500)
+            this.increasePlaytime();
+        };
+
+        if(this.state.playStarted === true && this.state.isPlaying === false){
+            this.setState({
+                isPlaying: true
+            })
+        };
+    }
+
+    increasePlaytime = () =>{
+        if(this.state.isPlaying === true){
+            this.setState({
+                playTime: this.state.playTime + 25
+            });
+        };
+
+        setTimeout (() => this.increasePlaytime(), 250);
     }
 
     pausePlaying = () =>{
         this.setState({
-            playStarted: false
+            isPlaying: false
         })
+    }
+
+    flickerEyes = () =>{
+        if (this.state.flickerEyes === false){
+            this.setState({
+                flickerEyes: true
+            })
+            setTimeout(() => this.flickerEyes(), 3000);
+        }else{
+            this.setState({
+                flickerEyes: false
+            })
+        }
     }
 
     render(){
@@ -54,10 +80,13 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
                     playStarted={this.state.playStarted}
                     playTime={this.state.playTime}
                     isPlaying={this.state.isPlaying}
+                    flickerEyesProp={this.state.flickerEyes}
+                    flickerEyesFunc={this.flickerEyes}
                 />
 
                 <ImageContainer 
                     playStarted={this.state.playStarted}
+                    flickerEyes={this.state.flickerEyes}
                 />
 
                 <div>

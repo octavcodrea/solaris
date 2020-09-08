@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {CSSProperties} from 'react';
 import { imgHeadFrontColor, imgHeadFrontLineart, imgBrainColor, imgBrainLineart, imgBrainWiresColor, imgBrainWiresLineart, 
     imgCheekLeftColor, imgCheekLeftLineart, imgCheekRightColor, imgCheekRightLineart, imgEarLeftColor, imgEarLeftLineart, 
     imgEarRightColor, imgEarRightLineart, imgEyeColor, imgEyeLineart, imgFaceBackColor, imgFaceBackLineart, imgFaceFrontColor, 
@@ -8,133 +8,22 @@ import { imgHeadFrontColor, imgHeadFrontLineart, imgBrainColor, imgBrainLineart,
     imgNeckFrontRightColor, imgNeckFrontRightLineart, imgNeckInside1Color, imgNeckInside1Lineart, imgNeckInside2Color, 
     imgNeckInside2Lineart, imgNeckBaseColor, imgNeckBaseLineart, imgNoseColor, imgNoseLineart, imgWiresMouthColor, imgWiresMouthLineart } from "../images.js";
 
-interface IButtonProps {
-    /** The text inside the button */
-    imagetype: string
-
+interface imagePartTypes {
+    imagetype: string,
+    flickerEyes?: any
 }
 
-// { imgHeadFrontColor, imgHeadFrontLineart, imgBrainColor, imgBrainLineart, imgBrainWiresColor, imgBrainWiresLineart, 
-    // imgCheekLeftColor, imgCheekLeftLineart, imgCheekRightColor, imgCheekRightLineart, imgEarLeftColor, imgEarLeftLineart, 
-    // imgEarRightColor, imgEarRightLineart, imgEyeColor, imgEyeLineart, imgFaceBackColor, imgFaceBackLineart, imgFaceFrontColor, 
-    // imgFaceFrontLineart, imgHeadBackColor, imgHeadBackLineart, imgMouthBackColor, imgMouthBackLineart, imgMouthFrontColor, 
-    // imgMouthFrontLineart, imgNeckBackColor, imgNeckBackLineart, imgNeckBackLeftColor, imgNeckBackLeftLineart, imgNeckBackRightColor, 
-    // imgNeckBackRightLineart, imgNeckFrontColor, imgNeckFrontLineart, imgNeckFrontLeftColor, imgNeckFrontLeftLineart, 
-    // imgNeckFrontRightColor, imgNeckFrontRightLineart, imgNeckInside1Color, imgNeckInside1Lineart, imgNeckInside2Color, 
-    // imgNeckInside2Lineart, imgNeckBaseColor, imgNeckBaseLineart, imgNoseColor, imgNoseLineart, imgWiresMouthColor, imgWiresMouthLineart };
+interface StylesDictionary{
+    [Key: string]: CSSProperties;
+}
 
-    // let grad1 = {
-    //     fill: "url(#gradientA)",
-    // };
+const ImagePart : React.FC<imagePartTypes> = ({imagetype, flickerEyes}) => {
+    const styles:StylesDictionary  = {
+        eyesFlicker:{
+            animation: "eyesFlicker 3s steps(5) infinite"
+        }
+    }
 
-    // let grad2 = {
-    //     fill: "url(#gradientB)",
-    // };
-
-    // let grad3 = {
-    //     fill: "url(#gradientC)",
-    // };
-
-    // let grad4 = {
-    //     fill: "url(#gradientD)",
-    // };
-
-    // let lineartgrad1 = {
-    //     fill: "url(#gradientE)",
-    // };
-
-    // const insertGradient = (gradId: string) =>{
-    //     switch(gradId){
-    //         default: return(
-    //             <linearGradient id="gradientA" x2="1" y2="1">
-    //                 <stop offset="0%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="yellow;orange;red;yellow" dur="16s" repeatCount="indefinite" />
-    //                 </stop>
-    //                 <stop offset="100%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="orange;red;yellow;orange" dur="16s" repeatCount="indefinite" />
-    //                     {/* <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="8s" repeatCount="indefinite" /> */}
-    //                 </stop>
-    //         </linearGradient>
-    //         )
-
-    //         case "grad1": return(
-    //             <radialGradient id="gradientA" x2="1" y2="1">
-    //                 <stop offset="0%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#F7931E;#c63468;#F7931E" dur="16s" repeatCount="indefinite" />
-    //                 </stop>
-    //                 {/* <stop offset="80%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#c76822;#515d71;#c76822" dur="16s" repeatCount="indefinite" />
-
-    //                 </stop> */}
-    //                 <stop offset="100%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#F7931E;#c63468;#F7931E" dur="16s" repeatCount="indefinite" />
-    //                     {/* <animate attributeName="offset" values=".95;0;.95;1.2" dur="2s" repeatCount="indefinite" /> */}
-    //                 </stop>
-
-                        
-    //                     {/* "#2d180b;#1d0f0c;#0b060e;#190517;#260520;#2a0f15;#2d180b"
-    //                     "#c76822;#944b32;#6e6068;#842d52;#b8114f;#a85046;#ba753d"
-    //                     "#ffd072;#f2dda4;#e6e2ce;#f5dcca;#ffdccc;#ffe2ac;#ffe0aa" */}
-    //                 {/* </stop> */}
-    //         </radialGradient>
-    //         )
-
-    //         case "grad2": return(
-    //             <linearGradient id="gradientB" x2="1" y2="1">
-    //                 <stop offset="0%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#9E005D;" dur="16s" repeatCount="indefinite" />
-    //                 </stop>
-    //                 <stop offset="100%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#9E005D;" dur="16s" repeatCount="indefinite" />
-    //                     {/* <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="32s" repeatCount="indefinite" /> */}
-    //                 </stop>
-    //         </linearGradient>
-    //         )
-
-    //         case "grad3": return(
-    //             <linearGradient id="gradientC" x2="1" y2="1">
-    //                 <stop offset="0%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#F15A24;#842d52;#F15A24" dur="16s" repeatCount="indefinite" />
-    //                 </stop>
-    //                 {/* <stop offset="50%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#944b32;" dur="16s" repeatCount="indefinite" />
-    //                 </stop> */}
-    //                 <stop offset="100%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#F15A24;#842d52;#F15A24" dur="16s" repeatCount="indefinite" />
-    //                     {/* <animate attributeName="offset" values=".95;0;.95;1.2" dur="2s" repeatCount="indefinite" /> */}
-    //                 </stop>
-    //         </linearGradient>
-    //         )
-
-    //         case "grad4": return(
-    //             <linearGradient id="gradientD" x2="1" y2="1">
-    //                 <stop offset="0%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#ec534d;#fdd67c;#fcffcc;#fdd67c;#ec534d" dur="16s" repeatCount="indefinite" />
-    //                 </stop>
-    //                 <stop offset="100%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#ec534d;#fdd67c;#fcffcc;#fdd67c;#ec534d" dur="16s" repeatCount="indefinite" />
-    //                     {/* <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="32s" repeatCount="indefinite" /> */}
-    //                 </stop>
-    //         </linearGradient>
-    //         )
-
-    //         case "lineartgrad1": return(
-    //             <linearGradient id="gradientE" x2="1" y2="1">
-    //                 <stop offset="0%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#000000;#1b388a;#000000" dur="16s" repeatCount="indefinite" />
-    //                 </stop>
-    //                 <stop offset="100%" stop-color="lightblue" stop-opacity="1">
-    //                     <animate attributeName="stop-color" values="#000000;#1b388a;#000000" dur="16s" repeatCount="indefinite" />
-    //                     {/* <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="32s" repeatCount="indefinite" /> */}
-    //                 </stop>
-    //         </linearGradient>
-    //         )
-
-    //     }
-    // }
-
-
-const ImagePart : React.FC<IButtonProps> = ({imagetype}) => {
 
     switch(imagetype){
         default: return null;
@@ -179,12 +68,17 @@ const ImagePart : React.FC<IButtonProps> = ({imagetype}) => {
         case "ear-right-lineart": return(<svg className="image lineart" id={imagetype}>{imgEarRightLineart()}</svg>);
 
         case "eye-left-color": return(
-        <svg className="image color1" id={imagetype} >
+        <svg className="image color1" id={imagetype} 
+            style={flickerEyes? styles.eyesFlicker : undefined}
+        >
             {/* {insertGradient("grad4")} */}
             {imgEyeColor()}</svg>);
         case "eye-left-lineart": return(<svg className="image lineart" id={imagetype}>{imgEyeLineart()}</svg>);
 
-        case "eye-right-color": return(<svg className="image color1" id={imagetype} >
+        case "eye-right-color": return(
+        <svg className="image color1" id={imagetype} 
+            style={flickerEyes? styles.eyesFlicker : undefined}
+        >
             {/* {insertGradient("grad4")} */}
             {imgEyeColor()}</svg>);
         case "eye-right-lineart": return(<svg className="image lineart" id={imagetype}>{imgEyeLineart()}</svg>);

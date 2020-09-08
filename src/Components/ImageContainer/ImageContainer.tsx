@@ -23,7 +23,8 @@ const formatParticle = (element: any) =>{
 
 
 interface icProps{
-    playStarted: boolean
+    playStarted: boolean,
+    flickerEyes: boolean
 }
 
 interface icState{
@@ -55,6 +56,10 @@ class ImageContainer extends React.Component<icProps, icState>{
             width: '800px',
             animation: 'fadeIn 7s 1'
         },
+
+        eyesFlicker:{
+            animation: "eyesFlicker 3s steps(5) infinite"
+        }
     }
 
     arr = ["pC1", "pC2", "pC3", "pC4", "pC5", "pC6", "pC7", "pC8" ];
@@ -96,12 +101,13 @@ class ImageContainer extends React.Component<icProps, icState>{
                     </div>
 
                     <div className="eye-left">
-                        <ImagePart imagetype='eye-left-color'/>
+                        <ImagePart imagetype='eye-left-color'
+                        flickerEyes={this.props.flickerEyes} />
                         <ImagePart imagetype='eye-left-lineart'/>
                     </div>
 
                     <div className="eye-right">
-                        <ImagePart imagetype='eye-right-color'/>
+                        <ImagePart imagetype='eye-right-color' />
                         <ImagePart imagetype='eye-right-lineart'/>
                     </div>
                 </div>

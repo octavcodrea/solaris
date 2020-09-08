@@ -48,6 +48,11 @@ table {
 }
 // ===============================================================================================
 
+$ui-color1: #f454ff;
+$ui-color1: #ff2d6c;
+$ui-color2: #18ffb2;
+
+
 body{
     background-color: rgb(31, 29, 30);
     overflow: hidden;
@@ -856,7 +861,7 @@ body{
     left: 0px;
     width: 100%;
     height: 100vh;
-    background: radial-gradient(circle, rgba(9,54,124,0) 17%, rgba(18,16,16,1) 68%);
+    background: radial-gradient(circle, rgba(9,54,124,0) 27%, rgba(18,16,16,1) 68%);
 }
 
 .background{
@@ -897,7 +902,7 @@ body{
     font-family: 'Courier New', Courier, monospace;
     display: block;
     position: absolute;
-    background-color: #f454ff;
+    background-color: $ui-color1;
 
     h1{
         font-size: 2.5rem;
@@ -973,13 +978,13 @@ body{
 
 .rhap_container{
     background-color: black !important;
-    color: #f454ff;
+    color: $ui-color1;
 
     transition: 2s;
 
     .rhap_main{
         background-color: black;
-        color: #f454ff;
+        color: $ui-color1;
         padding-right: 8px;
 
         .rhap_progress-section{
@@ -1007,7 +1012,7 @@ body{
 
             .rhap_play-pause-button{
                 display: block;
-                color: #f454ff;
+                color: $ui-color1;
             }
 
             .rhap_forward-button{
@@ -1083,4 +1088,12 @@ body{
 @keyframes fadeIn{
     0% {opacity: 0.1;}
     100% {opacity: 1}
+}
+
+@keyframes eyesFlicker{
+    0%{fill: rgb(255, 153, 153)}
+    25%{fill: rgb(95, 89, 0)}
+    50%{fill: rgb(125, 255, 153)}
+    75%{fill: rgb(0, 63, 88)}
+    100%{fill: rgb(56, 0, 0)}
 }
