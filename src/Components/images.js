@@ -273,7 +273,20 @@ const imgEyeColor = () =>{
             <g>
     <path className="a" d="M58.56,3.2314A55.3593,55.3593,0,1,1,3.1989,58.9186,55.3312,55.3312,0,0,1,58.56,3.2314Zm50.7492,55.4175a50.7707,50.7707,0,1,0-50.7654,50.7178A50.7294,50.7294,0,0,0,109.3089,58.6489Z"/>
     <path className="a" d="M10.9087,58.5731A47.6507,47.6507,0,1,1,58.0776,106.24,47.6068,47.6068,0,0,1,10.9087,58.5731ZM58.57,16.0583a42.5341,42.5341,0,1,0,42.5127,42.7662A42.5261,42.5261,0,0,0,58.57,16.0583Z"/>
-    <path className="b" d="M58.5256,97.9843A39.4074,39.4074,0,1,1,97.9684,59.2505,39.3832,39.3832,0,0,1,58.5256,97.9843Z"/>
+    {/* <path className="b" id="eyeColor" d="M58.5256,97.9843A39.4074,39.4074,0,1,1,97.9684,59.2505,39.3832,39.3832,0,0,1,58.5256,97.9843Z"/> */}
+    {/* <rect className="b" x="0.125" y="0.125" width="116.6573" height="116.6573"/> */}
+  </g>
+        </g>
+    )
+}
+
+const imgEyeLens = () =>{
+    return(
+        <g>
+            <g>
+    {/* <path className="a" d="M58.56,3.2314A55.3593,55.3593,0,1,1,3.1989,58.9186,55.3312,55.3312,0,0,1,58.56,3.2314Zm50.7492,55.4175a50.7707,50.7707,0,1,0-50.7654,50.7178A50.7294,50.7294,0,0,0,109.3089,58.6489Z"/>
+    <path className="a" d="M10.9087,58.5731A47.6507,47.6507,0,1,1,58.0776,106.24,47.6068,47.6068,0,0,1,10.9087,58.5731ZM58.57,16.0583a42.5341,42.5341,0,1,0,42.5127,42.7662A42.5261,42.5261,0,0,0,58.57,16.0583Z"/> */}
+    <path className="b" id="eyeColor" d="M58.5256,97.9843A39.4074,39.4074,0,1,1,97.9684,59.2505,39.3832,39.3832,0,0,1,58.5256,97.9843Z"/>
     {/* <rect className="b" x="0.125" y="0.125" width="116.6573" height="116.6573"/> */}
   </g>
         </g>
@@ -824,4 +837,6 @@ export { imgHeadFrontColor, imgHeadFrontLineart, imgBrainColor, imgBrainLineart,
     imgMouthFrontLineart, imgNeckBackColor, imgNeckBackLineart, imgNeckBackLeftColor, imgNeckBackLeftLineart, imgNeckBackRightColor, 
     imgNeckBackRightLineart, imgNeckFrontColor, imgNeckFrontLineart, imgNeckFrontLeftColor, imgNeckFrontLeftLineart, 
     imgNeckFrontRightColor, imgNeckFrontRightLineart, imgNeckInside1Color, imgNeckInside1Lineart, imgNeckInside2Color, 
-    imgNeckInside2Lineart, imgNeckBaseColor, imgNeckBaseLineart, imgNoseColor, imgNoseLineart, imgWiresMouthColor, imgWiresMouthLineart };
+    imgNeckInside2Lineart, imgNeckBaseColor, imgNeckBaseLineart, imgNoseColor, imgNoseLineart, imgWiresMouthColor, imgWiresMouthLineart,
+    imgEyeLens
+};

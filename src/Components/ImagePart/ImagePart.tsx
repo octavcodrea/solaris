@@ -6,7 +6,7 @@ import { imgHeadFrontColor, imgHeadFrontLineart, imgBrainColor, imgBrainLineart,
     imgMouthFrontLineart, imgNeckBackColor, imgNeckBackLineart, imgNeckBackLeftColor, imgNeckBackLeftLineart, imgNeckBackRightColor, 
     imgNeckBackRightLineart, imgNeckFrontColor, imgNeckFrontLineart, imgNeckFrontLeftColor, imgNeckFrontLeftLineart, 
     imgNeckFrontRightColor, imgNeckFrontRightLineart, imgNeckInside1Color, imgNeckInside1Lineart, imgNeckInside2Color, 
-    imgNeckInside2Lineart, imgNeckBaseColor, imgNeckBaseLineart, imgNoseColor, imgNoseLineart, imgWiresMouthColor, imgWiresMouthLineart } from "../images.js";
+    imgNeckInside2Lineart, imgNeckBaseColor, imgNeckBaseLineart, imgNoseColor, imgNoseLineart, imgWiresMouthColor, imgWiresMouthLineart, imgEyeLens } from "../images.js";
 
 interface imagePartTypes {
     imagetype: string,
@@ -20,7 +20,7 @@ interface StylesDictionary{
 const ImagePart : React.FC<imagePartTypes> = ({imagetype, flickerEyes}) => {
     const styles:StylesDictionary  = {
         eyesFlicker:{
-            animation: "eyesFlicker 3s steps(5) infinite"
+            animation: "eyesFlicker 2s steps(2) infinite"
         }
     }
 
@@ -69,18 +69,32 @@ const ImagePart : React.FC<imagePartTypes> = ({imagetype, flickerEyes}) => {
 
         case "eye-left-color": return(
         <svg className="image color1" id={imagetype} 
-            style={flickerEyes? styles.eyesFlicker : undefined}
+            // style={flickerEyes? styles.eyesFlicker : undefined}
         >
             {/* {insertGradient("grad4")} */}
             {imgEyeColor()}</svg>);
+
+        case "eye-left-lens": return(
+        <svg className="image color1" id={imagetype} 
+            style={flickerEyes? styles.eyesFlicker : undefined}
+        >
+
+            {imgEyeLens()}</svg>);
         case "eye-left-lineart": return(<svg className="image lineart" id={imagetype}>{imgEyeLineart()}</svg>);
 
         case "eye-right-color": return(
         <svg className="image color1" id={imagetype} 
-            style={flickerEyes? styles.eyesFlicker : undefined}
+            // style={flickerEyes? styles.eyesFlicker : undefined}
         >
             {/* {insertGradient("grad4")} */}
             {imgEyeColor()}</svg>);
+
+        case "eye-right-lens": return(
+            <svg className="image color1" id={imagetype} 
+                style={flickerEyes? styles.eyesFlicker : undefined}
+            >
+                {imgEyeLens()}</svg>);
+
         case "eye-right-lineart": return(<svg className="image lineart" id={imagetype}>{imgEyeLineart()}</svg>);
 
         case "face-back-color": return(

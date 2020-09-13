@@ -123,7 +123,7 @@ class PopUpContainer extends React.Component<IProps, IState>{
         let currentItem = popups[this.arrayIndex];
         // console.log(popups[this.arrayIndex]);
 
-        if(currentItem.completed === false){
+        if(currentItem && currentItem.completed === false){
             // console.log("this.completedAction:", this.completedAction[this.arrayIndex])
             if (currentItem.timestamp === playTime){
                 // console.log('penis');
@@ -239,7 +239,7 @@ class PopUpContainer extends React.Component<IProps, IState>{
         appliedstyle.top = positionY + '%';
 
          let content = (
-            <div style={appliedstyle}  id={PUid}>
+            <div style={appliedstyle} id={PUid}>
                 {text}
             </div>);
 

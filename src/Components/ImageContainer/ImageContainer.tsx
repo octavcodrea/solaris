@@ -28,7 +28,7 @@ interface icProps{
 }
 
 interface icState{
-
+    flickerStarted: boolean
 }
 
 interface StylesDictionary{
@@ -37,6 +37,13 @@ interface StylesDictionary{
 
 
 class ImageContainer extends React.Component<icProps, icState>{
+    constructor(props: icProps){
+        super(props)
+
+        this.state = {
+            flickerStarted: false
+        }
+    }
 
     styles:StylesDictionary  = {
         icIntroStyle:{
@@ -58,7 +65,7 @@ class ImageContainer extends React.Component<icProps, icState>{
         },
 
         eyesFlicker:{
-            animation: "eyesFlicker 3s steps(5) infinite"
+            animation: "eyesFlicker 2s steps(1) infinite"
         }
     }
 
@@ -67,6 +74,12 @@ class ImageContainer extends React.Component<icProps, icState>{
     particles = this.arr.map(element => 
         formatParticle(element)
     )
+
+    // flickerEyes = () =>{
+    //     if (this.state.flickerStarted === false){
+    //         let eye = document.getElementById("eyeColor");    
+    //     }
+    // }
     
     render(){
         return(
@@ -101,13 +114,20 @@ class ImageContainer extends React.Component<icProps, icState>{
                     </div>
 
                     <div className="eye-left">
-                        <ImagePart imagetype='eye-left-color'
-                        flickerEyes={this.props.flickerEyes} />
+                        <ImagePart imagetype='eye-left-color'/>
+                        <div className="lens-left">
+                            <ImagePart imagetype='eye-left-lens'
+                            flickerEyes={this.props.flickerEyes} />
+                        </div>
                         <ImagePart imagetype='eye-left-lineart'/>
                     </div>
 
                     <div className="eye-right">
                         <ImagePart imagetype='eye-right-color' />
+                        <div className="lens-right">
+                            <ImagePart imagetype='eye-right-lens'
+                            flickerEyes={this.props.flickerEyes} />
+                        </div>
                         <ImagePart imagetype='eye-right-lineart'/>
                     </div>
                 </div>

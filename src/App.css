@@ -255,19 +255,19 @@ body {
           animation: float3 80s infinite;
 }
 
-.faceContainer #eye-left-lineart {
+.faceContainer .eye-left #eye-left-lens {
+  -webkit-animation: cycleColorsLights3 4s steps(5) infinite;
+          animation: cycleColorsLights3 4s steps(5) infinite;
+}
+
+.faceContainer .eye-left #eye-left-lineart {
   -webkit-animation: cycleColorsLineart1 40s infinite;
           animation: cycleColorsLineart1 40s infinite;
 }
 
-.faceContainer #eye-left-color {
-  -webkit-animation: cycleColors4 40s infinite;
-          animation: cycleColors4 40s infinite;
-}
-
-.faceContainer #eye-left-color .b {
-  -webkit-animation: cycleColorsLights1 4s steps(5) infinite;
-          animation: cycleColorsLights1 4s steps(5) infinite;
+.faceContainer .eye-left #eye-left-color {
+  -webkit-animation: cycleColors2 40s infinite;
+          animation: cycleColors2 40s infinite;
 }
 
 .faceContainer .eye-right {
@@ -279,19 +279,19 @@ body {
           animation: float3 80s infinite;
 }
 
+.faceContainer .eye-right #eye-right-lens {
+  -webkit-animation: cycleColorsLights3 4s steps(5) infinite;
+          animation: cycleColorsLights3 4s steps(5) infinite;
+}
+
 .faceContainer .eye-right #eye-right-lineart {
   -webkit-animation: cycleColorsLineart1 40s infinite;
           animation: cycleColorsLineart1 40s infinite;
 }
 
 .faceContainer .eye-right #eye-right-color {
-  -webkit-animation: cycleColors4 40s infinite;
-          animation: cycleColors4 40s infinite;
-}
-
-.faceContainer .eye-right #eye-right-color .b {
-  -webkit-animation: cycleColorsLights1 4s steps(5) infinite;
-          animation: cycleColorsLights1 4s steps(5) infinite;
+  -webkit-animation: cycleColors2 40s infinite;
+          animation: cycleColors2 40s infinite;
 }
 
 .mouthContainer {
@@ -790,17 +790,17 @@ body {
     background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
   }
   25% {
-    -webkit-transform: translate(-100px, 0px);
-            transform: translate(-100px, 0px);
+    -webkit-transform: translate(-10%, 0px);
+            transform: translate(-10%, 0px);
   }
   50% {
-    -webkit-transform: translate(200px, 100px);
-            transform: translate(200px, 100px);
+    -webkit-transform: translate(35%, 10%);
+            transform: translate(35%, 10%);
     background: radial-gradient(circle, #5e0034 0%, rgba(24, 22, 24, 0) 75%);
   }
   75% {
-    -webkit-transform: translate(100px, -100px);
-            transform: translate(100px, -100px);
+    -webkit-transform: translate(10%, -25%);
+            transform: translate(10%, -25%);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
@@ -816,17 +816,17 @@ body {
     background: radial-gradient(circle, #331173 0%, rgba(24, 22, 24, 0) 75%);
   }
   25% {
-    -webkit-transform: translate(-100px, 0px);
-            transform: translate(-100px, 0px);
+    -webkit-transform: translate(-10%, 0px);
+            transform: translate(-10%, 0px);
   }
   50% {
-    -webkit-transform: translate(200px, 100px);
-            transform: translate(200px, 100px);
+    -webkit-transform: translate(35%, 10%);
+            transform: translate(35%, 10%);
     background: radial-gradient(circle, #5e0034 0%, rgba(24, 22, 24, 0) 75%);
   }
   75% {
-    -webkit-transform: translate(100px, -100px);
-            transform: translate(100px, -100px);
+    -webkit-transform: translate(10%, -25%);
+            transform: translate(10%, -25%);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
@@ -1401,10 +1401,10 @@ body {
     fill: #aaffa7;
   }
   50% {
-    fill: #7de1ff;
+    fill: #cff4ff;
   }
   75% {
-    fill: #7db1ff;
+    fill: #61e7ff;
   }
   100% {
     fill: #fff170;
@@ -1419,10 +1419,10 @@ body {
     fill: #aaffa7;
   }
   50% {
-    fill: #7de1ff;
+    fill: #cff4ff;
   }
   75% {
-    fill: #7db1ff;
+    fill: #61e7ff;
   }
   100% {
     fill: #fff170;
@@ -1569,6 +1569,11 @@ body {
   display: block;
   position: absolute;
   background-color: #ff2d6c;
+}
+
+#introCard span {
+  -webkit-animation: typingAnim 2s steps(1) infinite;
+          animation: typingAnim 2s steps(1) infinite;
 }
 
 #introCard h1 {
@@ -1975,37 +1980,103 @@ body {
 
 @-webkit-keyframes eyesFlicker {
   0% {
-    fill: #ff9999;
+    fill: #99ffff;
+  }
+  5% {
+    fill: #312e33;
+  }
+  10% {
+    fill: #fdff7d;
   }
   25% {
-    fill: #5f5900;
+    fill: #331c50;
   }
-  50% {
-    fill: #7dff99;
+  35% {
+    fill: #a1a175;
+  }
+  55% {
+    fill: #331c50;
+  }
+  60% {
+    fill: #99ffff;
   }
   75% {
-    fill: #003f58;
+    fill: #2a2f5c;
+  }
+  85% {
+    fill: #fdff7d;
   }
   100% {
-    fill: #380000;
+    fill: #323144;
   }
 }
 
 @keyframes eyesFlicker {
   0% {
-    fill: #ff9999;
+    fill: #99ffff;
+  }
+  5% {
+    fill: #312e33;
+  }
+  10% {
+    fill: #fdff7d;
   }
   25% {
-    fill: #5f5900;
+    fill: #331c50;
   }
-  50% {
-    fill: #7dff99;
+  35% {
+    fill: #a1a175;
+  }
+  55% {
+    fill: #331c50;
+  }
+  60% {
+    fill: #99ffff;
   }
   75% {
-    fill: #003f58;
+    fill: #2a2f5c;
+  }
+  85% {
+    fill: #fdff7d;
   }
   100% {
-    fill: #380000;
+    fill: #323144;
+  }
+}
+
+@-webkit-keyframes typingAnim {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes typingAnim {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .imageContainer {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    position: absolute;
+    left: -10%;
+  }
+  .foreground-overlay {
+    background: radial-gradient(circle, rgba(9, 54, 124, 0) 27%, #121010 88%);
   }
 }
 /*# sourceMappingURL=App.css.map */

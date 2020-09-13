@@ -69,7 +69,7 @@ const popups = [
   },
 
   {
-    timestamp: 2400,
+    timestamp: 2350,
     action: "createTextPopUp",
     repeat: 0,
     duration: 3000,
@@ -84,7 +84,7 @@ const popups = [
   },
 
   {
-    timestamp: 2500,
+    timestamp: 2450,
     action: "createTextPopUp",
     repeat: 0,
     duration: 3000,
@@ -99,7 +99,7 @@ const popups = [
   },
 
   {
-    timestamp: 2600,
+    timestamp: 2550,
     action: "createTextPopUp",
     repeat: 0,
     duration: 3000,
@@ -114,7 +114,7 @@ const popups = [
   },
 
   {
-    timestamp: 2700,
+    timestamp: 2650,
     action: "createTextPopUp",
     repeat: 0,
     duration: 3000,
@@ -178,7 +178,7 @@ const popups = [
   },
 
   {
-    timestamp: 5800,
+    timestamp: 5700,
     action: "createTextPopUp-for",
     repeat: 20,
     duration: 1000,
@@ -195,7 +195,7 @@ const popups = [
   },
 
   {
-    timestamp: 6000,
+    timestamp: 5900,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -210,7 +210,7 @@ const popups = [
   },
 
   {
-    timestamp: 6200,
+    timestamp: 6100,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -307,7 +307,7 @@ const popups = [
   },
 
   {
-    timestamp: 9000,
+    timestamp: 8800,
     action: "createTextPopUp",
     repeat: 10,
     duration: 4000,
@@ -322,7 +322,7 @@ const popups = [
   },
 
   {
-    timestamp: 9750,
+    timestamp: 9700,
     action: "createTextPopUp",
     repeat: 10,
     duration: 4000,
@@ -337,7 +337,7 @@ const popups = [
   },
 
   {
-    timestamp: 9850,
+    timestamp: 9800,
     action: "createTextPopUp-for",
     repeat: 20,
     duration: 1000,
@@ -354,7 +354,7 @@ const popups = [
   },
 
   {
-    timestamp: 9950,
+    timestamp: 9900,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -422,7 +422,7 @@ const popups = [
   },
 
   {
-    timestamp: 13400,
+    timestamp: 13250,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -439,7 +439,7 @@ const popups = [
   },
 
   {
-    timestamp: 13500,
+    timestamp: 13350,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -541,7 +541,7 @@ const popups = [
   },
 
   {
-    timestamp: 15000,
+    timestamp: 14950,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -593,7 +593,7 @@ const popups = [
   },
 
   {
-    timestamp: 17150,
+    timestamp: 16900,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -645,7 +645,7 @@ const popups = [
   },
 
   {
-    timestamp: 19100,
+    timestamp: 19000,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -748,13 +748,31 @@ const popups = [
   },
 
   {
-    timestamp: 25600,
+    timestamp: 24600,
+    action: "createTextPopUp-for",
+    repeat: 20,
+    duration: 3000,
+    style: "style3",
+    left: -3,
+    top: 55,
+    text: "$deploy unit --force",
+    leftOffset: 6,
+    topOffset: 5,
+    functionLeft: "*",
+    functionTop: "%5",
+    delay: 0,
+    completed: false,
+    flickerEyes: true
+  },
+
+  {
+    timestamp: 25000,
     action: "createTextPopUp-for",
     repeat: 20,
     duration: 3000,
     style: "style3",
     left: -5,
-    top: 30,
+    top: 7,
     text: "// pathways error",
     leftOffset: 6,
     topOffset: 5,
@@ -765,7 +783,7 @@ const popups = [
   },
 
   {
-    timestamp: 25800,
+    timestamp: 25400,
     action: "createTextPopUp-for",
     repeat: 20,
     duration: 3000,
@@ -782,13 +800,13 @@ const popups = [
   },
 
   {
-    timestamp: 26000,
+    timestamp: 25800,
     action: "createTextPopUp-for",
     repeat: 20,
     duration: 3000,
     style: "style3",
     left: -3,
-    top: 20,
+    top: 55,
     text: "// neural data error",
     leftOffset: 6,
     topOffset: 5,
@@ -801,13 +819,13 @@ const popups = [
 
   // 4:24
   {
-    timestamp: 26400,
-    action: "createTextPopUp",
+    timestamp: 26000,
+    action: "createTextPopUp-for",
     repeat: 10,
     duration: 3000,
     style: "style1",
-    left: 25,
-    top: 70,
+    left: -5,
+    top: 60,
     text: "in the end i'm taking away everything else that is not a part of the plan",
     leftOffset: 6,
     topOffset: 5,
@@ -815,6 +833,24 @@ const popups = [
     functionTop: "%5",
     delay: 0,
     completed: false,
+  },
+
+  {
+    timestamp: 26200,
+    action: "createTextPopUp-for",
+    repeat: 20,
+    duration: 3000,
+    style: "style3",
+    left: -3,
+    top: 55,
+    text: "// deploying unit",
+    leftOffset: 6,
+    topOffset: 5,
+    functionLeft: "*",
+    functionTop: "%5",
+    delay: 0,
+    completed: false,
+    flickerEyes: true
   },
 ];
 

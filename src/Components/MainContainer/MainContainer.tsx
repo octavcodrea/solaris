@@ -3,6 +3,8 @@ import ImageContainer from '../ImageContainer/ImageContainer';
 import PopUpContainer from '../PopUpContainer/PopUpContainer';
 import AudioComponent from '../AudioComponent/AudioComponent';
 import IntroCard from '../IntroCard/IntroCard';
+import Sound from 'react-sound';
+import { bgurl } from "../../Audio/audiourls";
 
 interface MainContainerProps{
 
@@ -12,7 +14,10 @@ interface MainContainerState{
     playStarted: boolean,
     playTime: number,
     isPlaying: boolean,
-    flickerEyes: boolean
+    showCredits: boolean,
+    flickerEyes: boolean,
+    bgSoundStatus: "PLAYING" | "STOPPED" | "PAUSED",
+    globalVolume: number
 }
 
 class MainContainer extends React.Component<MainContainerProps, MainContainerState>{
@@ -23,7 +28,10 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
             playStarted: false,
             playTime: 0, 
             isPlaying: false,
-            flickerEyes: false
+            showCredits: false,
+            flickerEyes: false,
+            bgSoundStatus: "STOPPED",
+            globalVolume: 1
         }
     }
 
@@ -31,7 +39,9 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
         if(this.state.playStarted === false){
             this.setState({
                 playStarted: true,
-                isPlaying: true
+                isPlaying: true,
+                bgSoundStatus: "PLAYING" 
+                
             });
 
             this.increasePlaytime();
@@ -39,7 +49,8 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
 
         if(this.state.playStarted === true && this.state.isPlaying === false){
             this.setState({
-                isPlaying: true
+                isPlaying: true,
+                bgSoundStatus: "PLAYING" 
             })
         };
     }
@@ -56,7 +67,14 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
 
     pausePlaying = () =>{
         this.setState({
-            isPlaying: false
+            isPlaying: false,
+            bgSoundStatus: "PAUSED" 
+        })
+    }
+
+    changeGlobalVolume = (e: any) =>{
+        this.setState({
+            globalVolume: e.target.volume 
         })
     }
 
@@ -65,7 +83,9 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
             this.setState({
                 flickerEyes: true
             })
-            setTimeout(() => this.flickerEyes(), 3000);
+            setTimeout(() => this.flickerEyes(), (Math.random() * 2000 + 500));
+
+            setTimeout(() => this.flickerEyes(), Math.random() * 40000)
         }else{
             this.setState({
                 flickerEyes: false
@@ -73,7 +93,19 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
         }
     }
 
+    checkEndPlaying = () =>{
+        if (this.state.playTime > 26700){
+            this.setState({
+                playStarted: false,
+                playTime: 0, 
+                isPlaying: false,
+                showCredits: true
+            })
+        }
+    }
+
     render(){
+        this.checkEndPlaying();
         return(
             <div>
                 <PopUpContainer 
@@ -94,9 +126,18 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
                         startPlaying={this.startPlaying}
                         playStarted={this.state.playStarted}
                         pausePlaying={this.pausePlaying}
+                        onVolChange={(e: any) => this.changeGlobalVolume(e)}
                     />
+
+                    <Sound
+                        url={bgurl}
+                        playStatus={this.state.bgSoundStatus}
+                        volume={this.state.globalVolume * 75}
+                        // playFromPosition={0}
+                        />
                     
-                    <IntroCard playStarted={this.state.playStarted} />
+                    <IntroCard playStarted={this.state.playStarted} 
+                            showCredits={this.state.showCredits} />
                 </div>
             </div>
         );

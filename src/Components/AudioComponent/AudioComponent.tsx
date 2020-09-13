@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import { speechurl } from "../../Audio/audiourls";
 
 interface StylesDictionary{
     [Key: string]: CSSProperties;
@@ -9,7 +10,8 @@ interface StylesDictionary{
 interface AudioCompProps{
     startPlaying: any,
     playStarted: boolean,
-    pausePlaying: any
+    pausePlaying: any,
+    onVolChange?: any
 }
 
 const AudioComponent = (props: AudioCompProps) =>{
@@ -53,9 +55,10 @@ const AudioComponent = (props: AudioCompProps) =>{
         <div className="audioplayer" style={props.playStarted? styles.playerStylePlaying : styles.playerStyleIntro }>
         <AudioPlayer
             // autoPlay
-            src="http://solaris.octavcodrea.com/speech.mp3"
+            src={speechurl}
             onPlay={props.startPlaying}
             onPause={props.pausePlaying}
+            onVolumeChange={props.onVolChange}
             // other props here
         />
 

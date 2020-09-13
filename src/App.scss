@@ -58,6 +58,7 @@ body{
     overflow: hidden;
 }
 
+
 .App{
     width: 100%;
     height: 100%;
@@ -71,6 +72,7 @@ body{
     // border: 1px solid red;
     width: 700px;
     height: 700px;
+
 
     svg{
         width: 100%;
@@ -235,17 +237,17 @@ body{
         left: 50px;
         top: -10px;
         animation: float3 80s infinite;
-    }
 
-    #eye-left-lineart{
-        animation: cycleColorsLineart1 40s infinite;
-    }
+        #eye-left-lens{
+            animation: cycleColorsLights3 4s steps(5) infinite;
+        }
 
-    #eye-left-color{
-        animation: cycleColors4 40s infinite;
-
-        .b{
-            animation: cycleColorsLights1 4s steps(5) infinite;
+        #eye-left-lineart{
+            animation: cycleColorsLineart1 40s infinite;
+        }
+    
+        #eye-left-color{
+            animation: cycleColors2 40s infinite;
         }
     }
 
@@ -256,16 +258,18 @@ body{
         top: -10px;
         animation: float3 80s infinite;
 
+        #eye-right-lens{
+            // fill: green;
+            animation: cycleColorsLights3 4s steps(5) infinite;
+        }
+
         #eye-right-lineart{
             animation: cycleColorsLineart1 40s infinite;
         }
 
         #eye-right-color{
-            animation: cycleColors4 40s infinite;
+            animation: cycleColors2 40s infinite;
 
-            .b{
-                animation: cycleColorsLights1 4s steps(5) infinite;
-            }
         }
     }
 }
@@ -684,13 +688,24 @@ body{
     animation: backgroundCircleMove1 7s steps(5) infinite;
 }
 
+// @keyframes backgroundCircleMove1{
+//     0%{transform: translate(0px, 0px);
+//         background: radial-gradient(circle, rgba(51,17,115,1) 0%, rgba(24,22,24,0) 75%);}
+//     25%{transform: translate(-100px, 0px);}
+//     50%{transform: translate(200px, 100px);
+//         background: radial-gradient(circle, rgb(94, 0, 52) 0%, rgba(24,22,24,0) 75%);}
+//     75%{transform: translate(100px, -100px);}
+//     100%{transform: translate(0px,0px);
+//         background: radial-gradient(circle, rgb(0, 75, 94) 0%, rgba(24,22,24,0) 75%);}
+// }
+
 @keyframes backgroundCircleMove1{
     0%{transform: translate(0px, 0px);
         background: radial-gradient(circle, rgba(51,17,115,1) 0%, rgba(24,22,24,0) 75%);}
-    25%{transform: translate(-100px, 0px);}
-    50%{transform: translate(200px, 100px);
+    25%{transform: translate(-10%, 0px);}
+    50%{transform: translate(35%, 10%);
         background: radial-gradient(circle, rgb(94, 0, 52) 0%, rgba(24,22,24,0) 75%);}
-    75%{transform: translate(100px, -100px);}
+    75%{transform: translate(10%, -25%);}
     100%{transform: translate(0px,0px);
         background: radial-gradient(circle, rgb(0, 75, 94) 0%, rgba(24,22,24,0) 75%);}
 }
@@ -811,8 +826,8 @@ body{
 @keyframes cycleColorsLights3{
     0%{fill: rgb(255, 241, 112)}
     25%{fill: rgb(170, 255, 167)}
-    50%{fill: rgb(125, 225, 255)}
-    75%{fill: rgb(125, 177, 255)}
+    50%{fill: rgb(207, 244, 255)}
+    75%{fill: rgb(97, 231, 255)}
     100%{fill: rgb(255, 241, 112)}
 }
 
@@ -903,6 +918,11 @@ body{
     display: block;
     position: absolute;
     background-color: $ui-color1;
+
+    span{
+        // color: pink;
+        animation: typingAnim 2s steps(1) infinite;
+    }
 
     h1{
         font-size: 2.5rem;
@@ -1091,9 +1111,35 @@ body{
 }
 
 @keyframes eyesFlicker{
-    0%{fill: rgb(255, 153, 153)}
-    25%{fill: rgb(95, 89, 0)}
-    50%{fill: rgb(125, 255, 153)}
-    75%{fill: rgb(0, 63, 88)}
-    100%{fill: rgb(56, 0, 0)}
+    0%{fill: rgb(153, 255, 255)}
+    5%{fill: rgb(49, 46, 51)}
+    10%{fill: rgb(253, 255, 125)}
+    25%{fill: rgb(51, 28, 80)}
+    35%{fill: rgb(161, 161, 117)}
+    55%{fill: rgb(51, 28, 80)}
+    60%{fill: rgb(153, 255, 255)}
+    75%{fill: rgb(42, 47, 92)}
+    85%{fill: rgb(253, 255, 125)}
+    100%{fill: rgb(50, 49, 68)}
+}
+
+@keyframes typingAnim{
+    0%{opacity: 1}
+    50%{opacity:0}
+    100%{opacity: 1}
+}
+
+@media only screen and (max-width: 768px){
+    .imageContainer{
+        transform: scale(0.8);
+        position: absolute;
+        left: -10%;
+        // margin-left: 50px;
+    }
+
+    .foreground-overlay{
+        background: radial-gradient(circle, rgba(9,54,124,0) 27%, rgba(18,16,16,1) 88%);
+    }
+
+
 }
