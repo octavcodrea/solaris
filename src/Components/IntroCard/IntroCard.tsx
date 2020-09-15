@@ -9,7 +9,6 @@ interface StylesDictionary{
     [Key: string]: CSSProperties;
 }
 
-
 const IntroCard = (props: introTypes) =>{
 
 if(props.showCredits === false){
@@ -27,12 +26,12 @@ if(props.showCredits === false){
 }else{
     return(
         <div id="introCard" className={props.playStarted ? 'introCard-inactive' : 'introCard-active'}>
-            <h1>if you'd choose between having an identity and not being in pain_<span>_</span></h1>
+            <h1>if you'd choose between having an identity and not being in pain<span>_</span></h1>
             <br/>
             <h2>Design & Programming:</h2>
             <p>Octav Codrea</p>
             <h2>Narrator & Text:</h2>
-            <p>Mathias</p>
+            <p>Street Sorcery</p>
             <h2>Music:</h2>
             <p>Samuel Cartier</p>
         </div>
