@@ -17,7 +17,8 @@ interface MainContainerState{
     showCredits: boolean,
     flickerEyes: boolean,
     bgSoundStatus: "PLAYING" | "STOPPED" | "PAUSED",
-    globalVolume: number
+    globalVolume: number,
+    isEnding: boolean
 }
 
 class MainContainer extends React.Component<MainContainerProps, MainContainerState>{
@@ -31,7 +32,8 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
             showCredits: false,
             flickerEyes: false,
             bgSoundStatus: "STOPPED",
-            globalVolume: 1
+            globalVolume: 1,
+            isEnding: false
         }
     }
 
@@ -60,6 +62,11 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
             this.setState({
                 playTime: this.state.playTime + 25
             });
+            if(this.state.playTime >= 26100 && this.state.isEnding === false){
+                this.setState({
+                    isEnding: true
+                });               
+            }
         };
 
         setTimeout (() => this.increasePlaytime(), 250);
@@ -99,7 +106,8 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
                 playStarted: false,
                 playTime: 0, 
                 isPlaying: false,
-                showCredits: true
+                showCredits: true,
+                isEnding: false
             })
         }
     }
@@ -119,6 +127,7 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
                 <ImageContainer 
                     playStarted={this.state.playStarted}
                     flickerEyes={this.state.flickerEyes}
+                    isEnding={this.state.isEnding}
                 />
 
                 <div>

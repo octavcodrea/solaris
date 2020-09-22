@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+  background-color: #1f1d1e;
   line-height: 1;
 }
 
@@ -55,11 +56,13 @@ table {
 body {
   background-color: #1f1d1e;
   overflow: hidden;
+  margin: auto;
 }
 
 .App {
   width: 100%;
   height: 100%;
+  margin: auto;
 }
 
 .image {
@@ -82,6 +85,10 @@ body {
   position: absolute;
   left: 150px;
   top: -40px;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .headContainer .head-back {
@@ -299,6 +306,8 @@ body {
   top: 620px;
   left: 285px;
   z-index: 10;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .mouthContainer .mouth-front {
@@ -1594,7 +1603,8 @@ body {
 }
 
 #introCard p {
-  background-color: white;
+  background-color: black;
+  color: white;
   font-size: 1.5rem;
   padding: 5px 15px;
   cursor: default;
@@ -2077,6 +2087,30 @@ body {
   }
   .foreground-overlay {
     background: radial-gradient(circle, rgba(9, 54, 124, 0) 27%, #121010 88%);
+  }
+}
+
+@-webkit-keyframes floatEnding {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(3deg) translate(15px, -200px);
+            transform: rotate(3deg) translate(15px, -200px);
+    opacity: 0%;
+  }
+}
+
+@keyframes floatEnding {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(3deg) translate(15px, -200px);
+            transform: rotate(3deg) translate(15px, -200px);
+    opacity: 0%;
   }
 }
 /*# sourceMappingURL=App.css.map */

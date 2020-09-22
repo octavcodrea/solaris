@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+    background-color: rgb(31, 29, 30);
 	line-height: 1;
 }
 ol, ul {
@@ -52,16 +53,17 @@ $ui-color1: #f454ff;
 $ui-color1: #ff2d6c;
 $ui-color2: #18ffb2;
 
-
 body{
     background-color: rgb(31, 29, 30);
     overflow: hidden;
+    margin: auto;
 }
 
 
 .App{
     width: 100%;
     height: 100%;
+    margin: auto;
 }
 
 
@@ -72,6 +74,7 @@ body{
     // border: 1px solid red;
     width: 700px;
     height: 700px;
+    // margin: auto;
 
 
     svg{
@@ -88,6 +91,8 @@ body{
     position: absolute;
     left: 150px;
     top: -40px;
+    animation-delay: 1s;
+    transition: 1s;
 
     .head-back{
         position: absolute;
@@ -279,6 +284,7 @@ body{
     top: 620px;
     left: 285px;
     z-index: 10;
+    animation-delay: 1s;
 
     .mouth-front{
         position: absolute;
@@ -943,7 +949,8 @@ body{
     }
 
     p{
-        background-color: white;
+        background-color: black;
+        color: white;
         font-size: 1.5rem;
         padding: 5px 15px;
 
@@ -1140,6 +1147,11 @@ body{
     .foreground-overlay{
         background: radial-gradient(circle, rgba(9,54,124,0) 27%, rgba(18,16,16,1) 88%);
     }
+}
 
-
+@keyframes floatEnding{
+    
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(3deg) translate(15px, -200px);
+        opacity: 0%;}
 }

@@ -195,7 +195,7 @@ const popups = [
   },
 
   {
-    timestamp: 5900,
+    timestamp: 5850,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -225,12 +225,12 @@ const popups = [
   },
 
   {
-    timestamp: 6500,
+    timestamp: 6450,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
     style: "style1",
-    left: 45,
+    left: 35,
     top: 70,
     text: "does sacrifice matter if it doesn't have a cost?",
     leftOffset: 5,
@@ -307,7 +307,7 @@ const popups = [
   },
 
   {
-    timestamp: 8800,
+    timestamp: 8750,
     action: "createTextPopUp",
     repeat: 10,
     duration: 4000,
@@ -322,7 +322,7 @@ const popups = [
   },
 
   {
-    timestamp: 9700,
+    timestamp: 9650,
     action: "createTextPopUp",
     repeat: 10,
     duration: 4000,
@@ -388,7 +388,7 @@ const popups = [
   },
 
   {
-    timestamp: 12600,
+    timestamp: 12450,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -422,7 +422,7 @@ const popups = [
   },
 
   {
-    timestamp: 13250,
+    timestamp: 13150,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -445,7 +445,7 @@ const popups = [
     duration: 3000,
     style: "style1",
     left: 60,
-    top: 10,
+    top: 30,
     text: "a lot of things are starting to disconnect",
     leftOffset: 6,
     topOffset: 5,
@@ -473,7 +473,7 @@ const popups = [
   },
 
   {
-    timestamp: 14100,
+    timestamp: 14000,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -490,7 +490,7 @@ const popups = [
   },
 
   {
-    timestamp: 14400,
+    timestamp: 14300,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -524,7 +524,7 @@ const popups = [
   },
 
   {
-    timestamp: 14900,
+    timestamp: 14800,
     action: "createTextPopUp-for",
     repeat: 20,
     duration: 1000,
@@ -546,7 +546,7 @@ const popups = [
     repeat: 10,
     duration: 3000,
     style: "style1",
-    left: 25,
+    left: 20,
     top: 85,
     text: "if you'd choose between having an identity and not being in pain",
     leftOffset: 6,
@@ -593,7 +593,7 @@ const popups = [
   },
 
   {
-    timestamp: 16900,
+    timestamp: 16700,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -645,7 +645,7 @@ const popups = [
   },
 
   {
-    timestamp: 19000,
+    timestamp: 18750,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
@@ -696,12 +696,12 @@ const popups = [
   },
 
   {
-    timestamp: 21200,
+    timestamp: 21000,
     action: "createTextPopUp",
     repeat: 10,
     duration: 3000,
     style: "style1",
-    left: 35,
+    left: 25,
     top: 70,
     text: "after they mirror your nervous system you get complete control",
     leftOffset: 6,
@@ -783,7 +783,7 @@ const popups = [
   },
 
   {
-    timestamp: 25400,
+    timestamp: 25250,
     action: "createTextPopUp-for",
     repeat: 20,
     duration: 3000,
@@ -800,7 +800,7 @@ const popups = [
   },
 
   {
-    timestamp: 25800,
+    timestamp: 25500,
     action: "createTextPopUp-for",
     repeat: 20,
     duration: 3000,
@@ -819,24 +819,24 @@ const popups = [
 
   // 4:24
   {
-    timestamp: 26000,
+    timestamp: 25700,
     action: "createTextPopUp-for",
     repeat: 10,
     duration: 3000,
     style: "style1",
     left: -5,
-    top: 60,
+    top: 50,
     text: "in the end i'm taking away everything else that is not a part of the plan",
     leftOffset: 6,
     topOffset: 5,
     functionLeft: "*",
-    functionTop: "%5",
+    functionTop: "%10",
     delay: 0,
     completed: false,
   },
 
   {
-    timestamp: 26200,
+    timestamp: 26100,
     action: "createTextPopUp-for",
     repeat: 20,
     duration: 3000,
@@ -856,179 +856,3 @@ const popups = [
 
 export default popups;
 
-    // PopUpList2 = [
-    //     {
-    //         timestamp: 100,
-    //         action: 'createTextPopUp',
-    //         repeat: 0,
-    //         duration: 3000,
-    //         style: 'style2',
-    //         left: '20',
-    //         top: '30',
-    //         text: 'connecting...',
-    //     }   
-    // ]
-
-    /*
-    handlePopUps = () =>{
-        if(this.state.counterStarted === false && this.props.playStarted){
-            this.setState({
-                counterStarted: true
-            })
-            
-            //0:05
-            // setTimeout(() => this.createTextPopUp('style1','45','60',"altered","pu1" ), 3000);
-            // setTimeout(() => this.deleteTextPopUp("pu1" ), 100000);
-
-            //0:02
-            for(let i=0;i<15;i++){
-                setTimeout(() => this.createTextPopUp('style2',String((8*i)),String(30+((i % 5)*8)),"connecting...",`pu002${i}` ), 1000);
-                setTimeout(() => this.deleteTextPopUp(`pu002${i}` ), 4000);
-            }
-
-            //0:14
-            setTimeout(() => this.createTextPopUp('style1','15','35',"i worked really hard for this","pu014" ), 14000);
-            setTimeout(() => this.deleteTextPopUp("pu014" ), 18000);
-
-            //0:24
-            setTimeout(() => this.createTextPopUp('style1','15','20',"altered","pu1b" ), 24000);
-            setTimeout(() => this.deleteTextPopUp("pu1b" ), 27000);
-            //0:25
-            setTimeout(() => this.createTextPopUp('style1','20','25',"authored","pu1c" ), 25000);
-            setTimeout(() => this.deleteTextPopUp("pu1c" ), 28000);
-            //0:26
-            setTimeout(() => this.createTextPopUp('style2','25','30',"reforged","pu1d" ), 26000);
-            setTimeout(() => this.deleteTextPopUp("pu1d" ), 29000);
-            //0:27
-            setTimeout(() => this.createTextPopUp('style1','30','35',"sculpted?","pu1e" ), 27000);
-            setTimeout(() => this.deleteTextPopUp("pu1e" ), 30000);
-
-            //0:27
-            for(let i=0;i<15;i++){
-                setTimeout(() => this.createTextPopUp('style1','30',String(35+(5*i)),"sculpted?",`pu02${i}` ), 27000 + (250*i));
-                setTimeout(() => this.deleteTextPopUp(`pu02${i}` ), 30000+(150 * i));
-            }
-
-            //0:47
-            for(let i=0;i<15;i++){
-                setTimeout(() => this.createTextPopUp('style2','30',String(35+(5*i)),"?",`pu047${i}` ), 47000);
-                setTimeout(() => this.deleteTextPopUp(`pu047${i}` ), 48000);
-            }
-
-            //0:55
-            setTimeout(() => this.createTextPopUp('style1','45','10',"when your body doesn't feel age","pu055" ), 55000);
-            setTimeout(() => this.deleteTextPopUp("pu055" ), 59000);
-
-            //0:58
-            for(let i=0;i<22;i++){
-                setTimeout(() => this.createTextPopUp('style2',String(-5+(6*i)),String(30+((i % 5)*6)),"?",`pu058${i}` ), 58000);
-                setTimeout(() => this.deleteTextPopUp(`pu058${i}`), 59000);
-            }
-
-            //1:00
-            setTimeout(() => this.createTextPopUp('style1','45','15',"when your body needs nothing","pu105" ), 60000);
-            setTimeout(() => this.deleteTextPopUp("pu105" ), 63000);
-
-            //1:02
-            setTimeout(() => this.createTextPopUp('style1','45','20',"does that really have any meaning","pu103" ), 62000);
-            setTimeout(() => this.deleteTextPopUp("pu103" ), 67000);
-
-            //1:05
-            setTimeout(() => this.createTextPopUp('style1','45','70',"does sacrifice matter if it doesn't have a cost?","pu105" ), 65000);
-            setTimeout(() => this.deleteTextPopUp("pu105" ), 68000);
-
-            //1:08
-            for(let i=0;i<12;i++){
-                setTimeout(() => this.createTextPopUp('style2',String(-5+(10*i)),String(70+((i % 3)*6)),"//then it's not a sacrifice",`pu106${i}` ), 68000);
-                setTimeout(() => this.deleteTextPopUp(`pu106${i}` ), 73000);
-            }
-
-            //01:24
-            setTimeout(() => this.createTextPopUp('style2','45','70',"//nonsense","pu124" ), 84000);
-            setTimeout(() => this.deleteTextPopUp("pu124" ), 86000);
-
-            //01:30
-            setTimeout(() => this.createTextPopUp('style1','60','20',"do you know where i am","pu130" ), 90000);
-            setTimeout(() => this.deleteTextPopUp("pu130" ), 94000);
-
-            //01:38
-            setTimeout(() => this.createTextPopUp('style1','30','80',"cursed?","pu138" ), 98000);
-            setTimeout(() => this.deleteTextPopUp("pu138" ), 101000);
-
-            //01:39
-            for(let i=0;i<32;i++){
-                setTimeout(() => this.createTextPopUp('style2',String(-5+(6*i)),String(20+((i % 8)*6)),"XXXXXXXXXXXXXXXXXXXXXXXX",`pu139${i}` ), 99000);
-                setTimeout(() => this.deleteTextPopUp(`pu139${i}` ), 100000);
-            }
-
-            //01:40
-            setTimeout(() => this.createTextPopUp('style1','25','80',"when bad reality happens to your circuits","pu140" ), 100000);
-            setTimeout(() => this.deleteTextPopUp("pu140" ), 105000);
-            
-            //02:06
-            setTimeout(() => this.createTextPopUp('style1','30','40',"how did you get here","pu206" ), 126000);
-            setTimeout(() => this.deleteTextPopUp("pu206" ), 129000);
-
-            //02:07
-            for(let i=0;i<22;i++){
-                setTimeout(() => this.createTextPopUp('style1',String(-5+(6*i)),String(30+((i % 5)*6)),"hello",`pu207${i}` ), 128000);
-                setTimeout(() => this.deleteTextPopUp(`pu207${i}` ), 129000);
-            }
-
-            //02:14
-            setTimeout(() => this.createTextPopUp('style1','60','10',"i'm not quite feeling put together","pu214" ), 134000);
-            setTimeout(() => this.deleteTextPopUp("pu214" ), 137000);
-
-            //02:15
-            setTimeout(() => this.createTextPopUp('style1','60','20',"a lot of things are starting to disconnect","pu215" ), 135000);
-            setTimeout(() => this.deleteTextPopUp("pu215" ), 139000);
-
-            //02:19
-            for(let i=0;i<22;i++){
-                setTimeout(() => this.createTextPopUp('style2',String(-5+(6*i)),String(30+((i % 5)*6)),".",`pu219${i}` ), 139000);
-                setTimeout(() => this.deleteTextPopUp(`pu219${i}` ), 140000);
-            }
-            
-            //02:21
-            setTimeout(() => this.createTextPopUp('style1','20','60',"i feel like i chose this(?)","pu221" ), 141000);
-            setTimeout(() => this.deleteTextPopUp("pu221" ), 144000);
-
-            //02:24
-            setTimeout(() => this.createTextPopUp('style1','20','65',"all the choices were already made for me","pu224" ), 144000);
-            setTimeout(() => this.deleteTextPopUp("pu224" ), 147000);
-
-            //02:26
-            setTimeout(() => this.createTextPopUp('style2','20','70',"//there were no choices to begin with","pu226" ), 147000);
-            setTimeout(() => this.deleteTextPopUp("pu226" ), 150000);
-            
-            //02:29
-            for(let i=0;i<22;i++){
-                setTimeout(() => this.createTextPopUp('style1',String(-5+(6*i)),String(30+((i % 5)*6)),"hey",`pu229${i}` ), 149000);
-                setTimeout(() => this.deleteTextPopUp(`pu229${i}` ), 150000);
-            }
-            
-            //02:30
-            setTimeout(() => this.createTextPopUp('style1','25','85',"if you'd choose between having an identity and not being in pain","pu230" ), 150000);
-            setTimeout(() => this.deleteTextPopUp("pu230" ), 286000);
-
-            //02:52
-            setTimeout(() => this.createTextPopUp('style1','25','20',"what do you call an epiphany you never wanted to have?","pu252" ), 172000);
-            setTimeout(() => this.deleteTextPopUp("pu252" ), 176000);
-
-            //03:12
-            setTimeout(() => this.createTextPopUp('style1','15','70',"am i not worth a rewatch","pu312" ), 192000);
-            setTimeout(() => this.deleteTextPopUp("pu312" ), 196000);
-
-            //03:32
-            setTimeout(() => this.createTextPopUp('style1','55','20',"after they mirror your nervous system you get complete control","pu332" ), 212000);
-            setTimeout(() => this.deleteTextPopUp("pu332" ), 216000);
-
-            //04:42
-            setTimeout(() => this.createTextPopUp('style1','25','70',"in the end i'm taking away everything else that is not a part of the plan","pu442" ), 282000);
-            setTimeout(() => this.deleteTextPopUp("pu442" ), 286000);
-            
-        }
-
-    }
-
-    */

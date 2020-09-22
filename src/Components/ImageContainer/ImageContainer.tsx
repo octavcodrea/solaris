@@ -24,7 +24,8 @@ const formatParticle = (element: any) =>{
 
 interface icProps{
     playStarted: boolean,
-    flickerEyes: boolean
+    flickerEyes: boolean,
+    isEnding: boolean
 }
 
 interface icState{
@@ -66,6 +67,17 @@ class ImageContainer extends React.Component<icProps, icState>{
 
         eyesFlicker:{
             animation: "eyesFlicker 2s steps(1) infinite"
+        },
+
+        ending:{
+            transition: "2s",
+            animation: `floatEnding ${(Math.random() * 5) + 3}s 1`,
+            animationFillMode: "forwards",
+            // animationDelay: `${Math.random() * 3}s`
+        },
+
+        null:{
+
         }
     }
 
@@ -86,18 +98,18 @@ class ImageContainer extends React.Component<icProps, icState>{
             <div className="imageContainer" 
             style={this.props.playStarted? this.styles.icPlayingStyle : this.styles.icIntroStyle}>
                 <div className="headContainer">
-                    <div className="head-front">
+                    <div className="head-front" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                         <ImagePart imagetype='head-front-color'/>
                         <ImagePart imagetype='head-front-lineart'/>
                     </div>
 
-                    <div className="head-back">
+                    <div className="head-back" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                         <ImagePart imagetype='head-back-color'/>
                         <ImagePart imagetype='head-back-lineart'/>
                     </div>
                 </div>
 
-                <div className="faceContainer">
+                <div className="faceContainer" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <div className="face-front">
                         <ImagePart imagetype='face-front-color'/>
                         <ImagePart imagetype='face-front-lineart'/>
@@ -132,7 +144,7 @@ class ImageContainer extends React.Component<icProps, icState>{
                     </div>
                 </div>
 
-                <div className="mouthContainer">
+                <div className="mouthContainer" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <div className="mouth-back">
                     <ImagePart imagetype='mouth-back-color'/>
                     <ImagePart imagetype='mouth-back-lineart'/>
@@ -144,87 +156,87 @@ class ImageContainer extends React.Component<icProps, icState>{
                     </div>
                 </div>
 
-                <div className="brain">
+                <div className="brain" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='brain-color'/>
                     <ImagePart imagetype='brain-lineart'/>
                 </div>
 
-                <div className="brain-wires">
+                <div className="brain-wires" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='brain-wires-color'/>
                     <ImagePart imagetype='brain-wires-lineart'/>
                 </div>
 
-                <div className="cheek-left">
+                <div className="cheek-left" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='cheek-left-color'/>
                     <ImagePart imagetype='cheek-left-lineart'/>
                 </div>
 
-                <div className="cheek-right">
+                <div className="cheek-right" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='cheek-right-color'/>
                     <ImagePart imagetype='cheek-right-lineart'/>
                 </div>
 
-                <div className="ear-left">
+                <div className="ear-left" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='ear-left-color'/>
                     <ImagePart imagetype='ear-left-lineart'/>
                 </div>
 
-                <div className="ear-right">
+                <div className="ear-right" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                 <ImagePart imagetype='ear-right-color'/>
                 <ImagePart imagetype='ear-right-lineart'/>
                 </div>
 
-                <div className="neck-front">
+                <div className="neck-front" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='neck-front-color'/>
                     <ImagePart imagetype='neck-front-lineart'/>
                 </div>
 
-                <div className="neck-front-left">
+                <div className="neck-front-left" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='neck-front-left-color'/>
                     <ImagePart imagetype='neck-front-left-lineart'/>
                 </div>
 
-                <div className="neck-front-right">
+                <div className="neck-front-right" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='neck-front-right-color'/>
                     <ImagePart imagetype='neck-front-right-lineart'/>
                 </div>
 
-                <div className="neck-back">
+                <div className="neck-back" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='neck-back-color'/>
                     <ImagePart imagetype='neck-back-lineart'/>
                 </div>
 
-                <div className="neck-back-left">
+                <div className="neck-back-left" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='neck-back-left-color'/>
                     <ImagePart imagetype='neck-back-left-lineart'/>
                 </div>
 
-                <div className="neck-back-right">
+                <div className="neck-back-right" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='neck-back-right-color'/>
                     <ImagePart imagetype='neck-back-right-lineart'/>
                 </div>
 
-                <div className="neck-base">
+                <div className="neck-base" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='neck-base-color'/>
                     <ImagePart imagetype='neck-base-lineart'/>
                 </div>
 
-                <div className="neck-front">
+                <div className="neck-front" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='neck-front-color'/>
                     <ImagePart imagetype='neck-front-lineart'/>
                 </div>
 
-                <div className="neck-inside1">
+                <div className="neck-inside1" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='neck-inside1-color'/>
                     <ImagePart imagetype='neck-inside1-lineart'/>
                 </div>
 
-                <div className="neck-inside2">
+                <div className="neck-inside2" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='neck-inside2-color'/>
                     <ImagePart imagetype='neck-inside2-lineart'/>
                 </div>
 
-                <div className="wires-mouth">
+                <div className="wires-mouth" style={this.props.isEnding? this.styles.ending : this.styles.null}>
                     <ImagePart imagetype='wires-mouth-color'/>
                     <ImagePart imagetype='wires-mouth-lineart'/>
                 </div>
