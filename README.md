@@ -6,3 +6,5 @@ The project is written in **React with Typescript** and uses the react-h5-audio-
 
 The monologue was recorded and edited by Street Sorcery.
 The background music was composed by Samuel Cartier.
+
+**http://solaris.octavcodrea.com**
