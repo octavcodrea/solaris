@@ -8,7 +8,8 @@ interface IProps {
     playTime: number,
     isPlaying: boolean,
     flickerEyesProp: boolean,
-    flickerEyesFunc: any
+    flickerEyesFunc: any,
+    playEnded: boolean
 }
 
 interface IState {
@@ -48,7 +49,9 @@ class PopUpContainer extends React.Component<IProps, IState>{
             // top: {value: "0%", writable: true},
             zIndex: 50,
             animation: "boxGlitch 0.5s infinite",
-            animationTimingFunction: "step-end"
+            animationTimingFunction: "step-end",
+            overflowX: "hidden",
+            overflowY: "hidden"
         },
 
         popUpStyle1Centered:{
@@ -67,7 +70,9 @@ class PopUpContainer extends React.Component<IProps, IState>{
             // left: {value: "0%", writable: true},
             // top: {value: "0%", writable: true},
             zIndex: 50,
-            // animation: "textGlitch 0.5s infinite"
+            // animation: "textGlitch 0.5s infinite",
+            overflowX: "hidden",
+            overflowY: "hidden"
         },
 
         popUpStyle2:{
@@ -86,7 +91,9 @@ class PopUpContainer extends React.Component<IProps, IState>{
             // top: {value: "0%", writable: true},
             zIndex: 50,
             animation: "boxGlitch 0.5s infinite",
-            animationTimingFunction: "step-end"
+            animationTimingFunction: "step-end",
+            overflowX: "hidden",
+            overflowY: "hidden"
         },
 
         popUpStyle3:{
@@ -105,7 +112,9 @@ class PopUpContainer extends React.Component<IProps, IState>{
             // top: {value: "0%", writable: true},
             zIndex: 50,
             animation: "boxGlitch 0.5s infinite",
-            animationTimingFunction: "step-end"
+            animationTimingFunction: "step-end",
+            overflowX: "hidden",
+            overflowY: "hidden"
         }
     }
 
@@ -114,7 +123,6 @@ class PopUpContainer extends React.Component<IProps, IState>{
     arrayIndex = 0;
     initializerArray = [0]
     completedAction = this.initializerArray.fill(0, 0, popups.length);
-
 
     handlePopUps2 = (playTime: number) =>{
         // console.log("[PUC]: handlePopUps2 initiated, arrayIndex:", this.arrayIndex);
@@ -259,9 +267,23 @@ class PopUpContainer extends React.Component<IProps, IState>{
         }else{
             setTimeout(() => this.deleteTextPopUp(PUid),250);
         }
+
+        if(this.props.playTime >= 26400){
+            console.log("reset pop-ups issued")
+            this.resetCompleted();
+        }
+    }
+
+    resetCompleted = () =>{
+        if(this.props.playEnded){
+            for (let k = 0; k<popups.length; k++){
+                popups[k].completed = false;
+            }
+        }
     }
 
     render(){
+        // this.resetCompleted();
         this.handlePopUps2(this.props.playTime);
         return(
             <div className="popUpContainer">

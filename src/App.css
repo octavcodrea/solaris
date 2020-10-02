@@ -53,16 +53,79 @@ table {
   border-spacing: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   background-color: #1f1d1e;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
+  overflow-x: hidden;
   margin: auto;
 }
 
 .App {
+  display: block;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 100%;
   height: 100%;
   margin: auto;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.imageContainer {
+  display: inline-block;
+  top: -930px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.foreground-overlay {
+  position: absolute;
+  mix-blend-mode: multiply;
+  z-index: 50;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 110vh;
+  background: radial-gradient(circle, rgba(9, 54, 124, 0) 27%, #121010 68%);
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.background {
+  z-index: -10;
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  background: radial-gradient(circle, #2b255d 0%, #181618 40%);
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.background-grain {
+  z-index: 50;
+  display: inline-block;
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  overflow: hidden;
+  overflow-x: hidden;
+  top: -100px;
+  background-color: black;
+  background-image: url(./Images/whitenoise-361x370.png);
+  background-repeat: repeat;
+  mix-blend-mode: darken;
+  -webkit-animation: grain 3s steps(3) infinite;
+          animation: grain 3s steps(3) infinite;
 }
 
 .image {
@@ -1539,38 +1602,12 @@ body {
   left: 10%;
 }
 
-.foreground-overlay {
-  position: absolute;
-  mix-blend-mode: multiply;
-  z-index: 50;
-  top: 0px;
-  left: 0px;
-  width: 100%;
+.popUpContainer {
   height: 100vh;
-  background: radial-gradient(circle, rgba(9, 54, 124, 0) 27%, #121010 68%);
-}
-
-.background {
-  z-index: -10;
-  position: absolute;
-  width: 100%;
-  height: 120%;
-  background: radial-gradient(circle, #2b255d 0%, #181618 40%);
-}
-
-.background-grain {
-  z-index: 50;
-  display: inline-block;
-  position: absolute;
-  width: 110vw;
-  height: 120vh;
+  width: 100vw;
   overflow: hidden;
-  top: -100px;
-  background-image: url(./Images/whitenoise-361x370.png);
-  background-repeat: repeat;
-  mix-blend-mode: darken;
-  -webkit-animation: grain 3s steps(3) infinite;
-          animation: grain 3s steps(3) infinite;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #introCard {
@@ -1605,7 +1642,7 @@ body {
 #introCard p {
   background-color: black;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 5px 15px;
   cursor: default;
 }
@@ -1652,6 +1689,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   height: 68px;
+  overflow-x: hidden;
 }
 
 .audioplayer:hover {
@@ -1669,6 +1707,7 @@ body {
   background-color: black;
   color: #ff2d6c;
   padding-right: 8px;
+  margin: 0px;
 }
 
 .rhap_container .rhap_main .rhap_progress-section .rhap_progress-container {
@@ -2078,18 +2117,6 @@ body {
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .imageContainer {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-    position: absolute;
-    left: -10%;
-  }
-  .foreground-overlay {
-    background: radial-gradient(circle, rgba(9, 54, 124, 0) 27%, #121010 88%);
-  }
-}
-
 @-webkit-keyframes floatEnding {
   0% {
     -webkit-transform: rotate(0deg);
@@ -2111,6 +2138,54 @@ body {
     -webkit-transform: rotate(3deg) translate(15px, -200px);
             transform: rotate(3deg) translate(15px, -200px);
     opacity: 0%;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .imageContainer {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    margin: auto;
+    left: -20%;
+  }
+  .background-grain {
+    display: none;
+  }
+  .foreground-overlay {
+    background: radial-gradient(circle, rgba(9, 54, 124, 0) 27%, #121010 88%);
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  html {
+    font-size: 10px;
+  }
+  .App {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .imageContainer {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    margin: auto;
+    top: -100px;
+    left: -50%;
+  }
+  .background-grain {
+    display: none;
+  }
+  #introCard p {
+    font-size: 1rem;
+  }
+  .rhap_container {
+    margin: 0px;
+  }
+  .audioplayer {
+    overflow-x: hidden;
   }
 }
 /*# sourceMappingURL=App.css.map */

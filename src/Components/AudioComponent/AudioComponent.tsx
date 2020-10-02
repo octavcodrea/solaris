@@ -11,7 +11,8 @@ interface AudioCompProps{
     startPlaying: any,
     playStarted: boolean,
     pausePlaying: any,
-    onVolChange?: any
+    onVolChange?: any,
+    onEnded?: any
 }
 
 const AudioComponent = (props: AudioCompProps) =>{
@@ -29,6 +30,7 @@ const AudioComponent = (props: AudioCompProps) =>{
           transition: "2s",
 
           opacity: '0.4'
+          
         //   backgroundColor: "red"
         },
     
@@ -41,11 +43,12 @@ const AudioComponent = (props: AudioCompProps) =>{
             // padding: '10px',
             bottom: '60%',
             right: '50%',
-            transform: 'scale(2) translateX(25%)',
+            transform: 'scale(1.5) translateX(34%)',
             boxShadow: '10px 10px 78px -6px rgba(0,0,50,0.75)',
             transition: '2s',
             animation: 'fadeIn 2s 1',
-            opacity: 1
+            opacity: 1,
+            overflowX: 'hidden'
           //   backgroundColor: "red"
         }
       }
@@ -53,14 +56,15 @@ const AudioComponent = (props: AudioCompProps) =>{
 
     return(
         <div className="audioplayer" style={props.playStarted? styles.playerStylePlaying : styles.playerStyleIntro }>
-        <AudioPlayer
-            // autoPlay
-            src={speechurl}
-            onPlay={props.startPlaying}
-            onPause={props.pausePlaying}
-            onVolumeChange={props.onVolChange}
-            // other props here
-        />
+          <AudioPlayer
+              // autoPlay
+              src={speechurl}
+              onPlay={props.startPlaying}
+              onPause={props.pausePlaying}
+              onVolumeChange={props.onVolChange}
+              onEnded={props.onEnded}
+              // other props here
+          />
 
       </div>
     )

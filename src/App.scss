@@ -53,17 +53,90 @@ $ui-color1: #f454ff;
 $ui-color1: #ff2d6c;
 $ui-color2: #18ffb2;
 
+html{
+    font-size: 16px;
+}
+
 body{
     background-color: rgb(31, 29, 30);
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
+    overflow-x: hidden;
     margin: auto;
 }
 
 
 .App{
+    display: block;
+    align-content: center;
+    justify-content: space-around;
     width: 100%;
     height: 100%;
+
+    // width: 100vw;
+    // height: 100vh;
     margin: auto;
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
+.imageContainer{
+    display: inline-block;
+    top: -930px;
+    // margin-left: -50%;
+
+
+    // margin: auto;
+    // text-align: center;
+    // align-items: center;
+    display: flex;
+    // justify-content: space-around;
+}
+
+.foreground-overlay{
+    position: absolute;
+    mix-blend-mode: multiply;
+    z-index: 50;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 110vh;
+    background: radial-gradient(circle, rgba(9,54,124,0) 27%, rgba(18,16,16,1) 68%);
+
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.background{
+    z-index: -10;
+    position:absolute;
+
+    width: 100%;
+    height: 120%;
+    // background-color: rgb(27, 25, 27);
+    background: radial-gradient(circle, rgba(43,37,93,1) 0%, rgba(24,22,24,1) 40%);
+    overflow: hidden;
+    overflow-x: hidden;
+    
+}
+
+.background-grain {
+    z-index: 50;
+    display: inline-block;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow: hidden;
+    overflow-x: hidden;
+    top: -100px;
+
+    background-color: black;;
+    background-image: url(./Images/whitenoise-361x370.png);
+    background-repeat: repeat;
+    mix-blend-mode: darken;
+    animation:grain 3s steps(3) infinite;
 }
 
 
@@ -874,50 +947,14 @@ body{
     left: 10%;
 }
 
-.foreground-overlay{
-    position: absolute;
-    mix-blend-mode: multiply;
-    z-index: 50;
-    top: 0px;
-    left: 0px;
-    width: 100%;
+.popUpContainer{
     height: 100vh;
-    background: radial-gradient(circle, rgba(9,54,124,0) 27%, rgba(18,16,16,1) 68%);
-}
+    width: 100vw;
 
-.background{
-    z-index: -10;
-    position:absolute;
-
-    width: 100%;
-    height: 120%;
-    // background-color: rgb(27, 25, 27);
-    background: radial-gradient(circle, rgba(43,37,93,1) 0%, rgba(24,22,24,1) 40%);
-    
-}
-
-.background-grain {
-    z-index: 50;
-    display: inline-block;
-    position: absolute;
-    width: 110vw;
-    height: 120vh;
     overflow: hidden;
-    top: -100px;
-
-    background-image: url(./Images/whitenoise-361x370.png);
-    background-repeat: repeat;
-    mix-blend-mode: darken;
-    animation:grain 3s steps(3) infinite;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
-
-// .popUpContainer{
-//     display: block;
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-
-// }
 
 #introCard{
     font-family: 'Courier New', Courier, monospace;
@@ -951,7 +988,7 @@ body{
     p{
         background-color: black;
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         padding: 5px 15px;
 
         cursor: default;
@@ -992,6 +1029,7 @@ body{
     z-index: 100;
     display: flex;
     height: 68px;
+    overflow-x: hidden;
 
     &:hover{
         opacity: 1;
@@ -1013,6 +1051,7 @@ body{
         background-color: black;
         color: $ui-color1;
         padding-right: 8px;
+        margin: 0px;
 
         .rhap_progress-section{
             .rhap_progress-container{
@@ -1136,12 +1175,30 @@ body{
     100%{opacity: 1}
 }
 
-@media only screen and (max-width: 768px){
+@keyframes floatEnding{
+    
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(3deg) translate(15px, -200px);
+        opacity: 0%;}
+}
+
+
+@media only screen and (min-width: 426px) and (max-width: 768px){
+    html{
+        font-size: 14px;
+    }
+
     .imageContainer{
         transform: scale(0.8);
-        position: absolute;
-        left: -10%;
-        // margin-left: 50px;
+        margin: auto;
+
+        // position: absolute;
+        left: -20%;
+        // margin-left: -50%;
+    }
+
+    .background-grain{
+        display: none;
     }
 
     .foreground-overlay{
@@ -1149,9 +1206,41 @@ body{
     }
 }
 
-@keyframes floatEnding{
-    
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(3deg) translate(15px, -200px);
-        opacity: 0%;}
+
+@media only screen and (max-width: 425px){
+    html{
+        font-size: 10px;
+    }
+
+    .App{
+        display: flex;
+    }
+
+    .imageContainer{
+        transform: scale(0.6);
+        margin: auto;
+        // margin-left: 50%;
+        top: -100px;
+        left: -50%;
+    }
+
+    .background-grain{
+        display: none;
+    }
+
+    #introCard{
+        p{
+            font-size: 1rem;
+        }
+    }
+
+    .rhap_container{
+        // transform: scale(0.7);
+        margin: 0px;
+    }
+
+    .audioplayer{
+        overflow-x: hidden;
+    }
+
 }

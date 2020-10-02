@@ -18,7 +18,8 @@ interface MainContainerState{
     flickerEyes: boolean,
     bgSoundStatus: "PLAYING" | "STOPPED" | "PAUSED",
     globalVolume: number,
-    isEnding: boolean
+    isEnding: boolean,
+    playEnded: boolean
 }
 
 class MainContainer extends React.Component<MainContainerProps, MainContainerState>{
@@ -33,7 +34,8 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
             flickerEyes: false,
             bgSoundStatus: "STOPPED",
             globalVolume: 1,
-            isEnding: false
+            isEnding: false,
+            playEnded: false
         }
     }
 
@@ -112,16 +114,25 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
         }
     }
 
+    endPlay = () => {
+        this.setState({
+            playEnded: true
+        })
+
+        return null;
+    }
+
     render(){
         this.checkEndPlaying();
         return(
-            <div>
+            <React.Fragment>
                 <PopUpContainer 
                     playStarted={this.state.playStarted}
                     playTime={this.state.playTime}
                     isPlaying={this.state.isPlaying}
                     flickerEyesProp={this.state.flickerEyes}
                     flickerEyesFunc={this.flickerEyes}
+                    playEnded={this.state.playEnded}
                 />
 
                 <ImageContainer 
@@ -130,12 +141,13 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
                     isEnding={this.state.isEnding}
                 />
 
-                <div>
+                <React.Fragment>
                     <AudioComponent
                         startPlaying={this.startPlaying}
                         playStarted={this.state.playStarted}
                         pausePlaying={this.pausePlaying}
                         onVolChange={(e: any) => this.changeGlobalVolume(e)}
+                        onEnded={(e: any) => this.endPlay()}
                     />
 
                     <Sound
@@ -147,8 +159,8 @@ class MainContainer extends React.Component<MainContainerProps, MainContainerSta
                     
                     <IntroCard playStarted={this.state.playStarted} 
                             showCredits={this.state.showCredits} />
-                </div>
-            </div>
+                </React.Fragment>
+            </React.Fragment>
         );
     }
 }
