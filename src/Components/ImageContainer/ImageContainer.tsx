@@ -38,6 +38,9 @@ interface StylesDictionary{
 
 
 class ImageContainer extends React.Component<icProps, icState>{
+
+    //Container for all the image parts and particles
+
     constructor(props: icProps){
         super(props)
 

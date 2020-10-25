@@ -21,6 +21,11 @@ interface StylesDictionary{
 }
 
 class PopUpContainer extends React.Component<IProps, IState>{
+
+    //Pop-ups are generated based on an array that stores values (timeline, text, style, position, etc.) for every pop-up/set of pop-ups.
+    //When the timestamp matches the value of one in the array, the function that handles pop-ups is called.
+    //The function can display either one or a more pop-ups in the same time using 'for' iterators
+
     constructor(props: any){
         super(props);
 

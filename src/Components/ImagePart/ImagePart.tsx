@@ -18,12 +18,16 @@ interface StylesDictionary{
 }
 
 const ImagePart : React.FC<imagePartTypes> = ({imagetype, flickerEyes}) => {
+
+    //Each image part contains an .svg image whose color is controlled through CSS animations
+    //.svg elements are stored as paths (additionally, with classNames) so the fill color is controlled through CSS
+
+
     const styles:StylesDictionary  = {
         eyesFlicker:{
             animation: "eyesFlicker 2s steps(2) infinite"
         }
     }
-
 
     switch(imagetype){
         default: return null;
